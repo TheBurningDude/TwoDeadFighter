@@ -35,6 +35,11 @@
             <artifactId>org-netbeans-core-startup</artifactId>
             <version>RELEASE81</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>GameEngine</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
