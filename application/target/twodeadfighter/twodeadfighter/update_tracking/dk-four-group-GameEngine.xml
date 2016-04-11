@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.GameEngine">
-    <module_version install_time="1460113134394" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1460371715410" last="true" origin="installer" specification_version="1.0">
         <file crc="433646851" name="config/Modules/dk-four-group-GameEngine.xml"/>
-        <file crc="3233439046" name="modules/dk-four-group-GameEngine.jar"/>
+        <file crc="503392573" name="modules/dk-four-group-GameEngine.jar"/>
         <file crc="2488665527" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-backend-lwjgl.jar"/>
         <file crc="2933476186" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-box2d-platform-natives-desktop.jar"/>
         <file crc="3989081260" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-box2d.jar"/>
@@ -18,6 +18,5 @@
         <file crc="1629828147" name="modules/ext/dk.four.group.GameEngine/org-lwjgl-lwjgl/lwjgl-platform-natives-windows.jar"/>
         <file crc="1810775593" name="modules/ext/dk.four.group.GameEngine/org-lwjgl-lwjgl/lwjgl.jar"/>
         <file crc="1003691195" name="modules/ext/dk.four.group.GameEngine/org-lwjgl-lwjgl/lwjgl_util.jar"/>
-        <file crc="2068674854" name="update_tracking/dk-four-group-GameEngine.xml"/>
     </module_version>
 </module>
