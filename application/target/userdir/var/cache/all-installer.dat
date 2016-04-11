@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Mon Apr 11 12:53:28 CEST 2016
+=======
+#Mon Apr 11 14:09:41 CEST 2016
+>>>>>>> origin/master
 org.openide.util.ui.OpenIDE-Module-Install=\u0000
 org.netbeans.api.annotations.common.OpenIDE-Module-Install=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Layer=\u0000
@@ -40,8 +44,13 @@ dk.four.group.Common.OpenIDE-Module-Deprecated=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Install=\u0000
 org.openide.util.ui.OpenIDE-Module-Description=\u0000
 org.netbeans.api.annotations.common.OpenIDE-Module-Deprecated=\u0000
+<<<<<<< HEAD
 org.openide.filesystems.AutoUpdate-Show-In-Client=false
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Description=\u0000
+=======
+dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Description=\u0000
+org.openide.filesystems.AutoUpdate-Show-In-Client=false
+>>>>>>> origin/master
 org.openide.util.lookup.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.libs.asm.OpenIDE-Module-Description=\u0000
 org.openide.util.AutoUpdate-Show-In-Client=false
@@ -53,8 +62,13 @@ org.openide.util.OpenIDE-Module-Hide-Classpath-Packages=\u0000
 org.netbeans.libs.asm.AutoUpdate-Show-In-Client=false
 org.openide.util.lookup.OpenIDE-Module-Layer=\u0000
 org.openide.util.lookup.OpenIDE-Module-Hide-Classpath-Packages=\u0000
+<<<<<<< HEAD
 org.openide.modules.AutoUpdate-Show-In-Client=false
 org.netbeans.core.startup.AutoUpdate-Show-In-Client=false
+=======
+org.netbeans.core.startup.AutoUpdate-Show-In-Client=false
+org.openide.modules.AutoUpdate-Show-In-Client=false
+>>>>>>> origin/master
 org.netbeans.bootstrap.OpenIDE-Module-Deprecated=\u0000
 dk.four.group.GameEngine.AutoUpdate-Show-In-Client=\u0000
 dk.four.group.Common.OpenIDE-Module-Layer=\u0000
@@ -62,8 +76,13 @@ org.netbeans.api.annotations.common.OpenIDE-Module-Description=\u0000
 org.openide.util.ui.OpenIDE-Module-Hide-Classpath-Packages=\u0000
 dk.four.group.GameEngine.OpenIDE-Module-Install=\u0000
 org.openide.util.lookup.AutoUpdate-Show-In-Client=false
+<<<<<<< HEAD
 org.netbeans.libs.asm.OpenIDE-Module-Hide-Classpath-Packages=\u0000
 dk.four.group.Common.AutoUpdate-Show-In-Client=\u0000
+=======
+dk.four.group.Common.AutoUpdate-Show-In-Client=\u0000
+org.netbeans.libs.asm.OpenIDE-Module-Hide-Classpath-Packages=\u0000
+>>>>>>> origin/master
 dk.four.group.GameEngine.OpenIDE-Module-Layer=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Deprecated=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Hide-Classpath-Packages=\u0000
