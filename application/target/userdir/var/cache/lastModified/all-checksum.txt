@@ -1,0 +1,11 @@
+platform=1460376563197
+cluster.bin=1460376563197
+cluster.etc=1460376563197
+cluster.platform=1460376563197
+cluster.twodeadfighter=1460376563197
+user=1460376563197
+crc=7
+locale=da_DK
+branding=twodeadfighter
+java.version=1.8.0_73
+java.vm.version=25.73-b02
