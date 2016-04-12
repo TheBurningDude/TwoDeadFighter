@@ -62,9 +62,9 @@ public class PlayerControlSystem implements IEntityProcessingService {
             }
             
             if(y > gameData.getDisplayHeight()){
-                y = 0;
-            }else if(y < 0){
                 y = gameData.getDisplayHeight();
+            }else if(y < 0){
+                y = 0;
             }
             
             // Update entity

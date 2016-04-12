@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.TwoDeadFighter.branding">
-<<<<<<< HEAD
-    <module_version install_time="1460371712808" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1460467429341" last="true" origin="installer" specification_version="1.0">
         <file crc="43030276" name="config/Modules/dk-four-group-TwoDeadFighter-branding.xml"/>
-        <file crc="2368864177" name="core/locale/core_twodeadfighter.jar"/>
-        <file crc="3253506285" name="modules/dk-four-group-TwoDeadFighter-branding.jar"/>
-        <file crc="87174017" name="modules/locale/org-netbeans-core-windows_twodeadfighter.jar"/>
-        <file crc="259117888" name="modules/locale/org-netbeans-core_twodeadfighter.jar"/>
-=======
-    <module_version install_time="1460376552885" last="true" origin="installer" specification_version="1.0">
-        <file crc="43030276" name="config/Modules/dk-four-group-TwoDeadFighter-branding.xml"/>
-        <file crc="1198558150" name="core/locale/core_twodeadfighter.jar"/>
-        <file crc="1536952983" name="modules/dk-four-group-TwoDeadFighter-branding.jar"/>
-        <file crc="699926307" name="modules/locale/org-netbeans-core-windows_twodeadfighter.jar"/>
-        <file crc="4049875661" name="modules/locale/org-netbeans-core_twodeadfighter.jar"/>
->>>>>>> origin/master
+        <file crc="3447439574" name="core/locale/core_twodeadfighter.jar"/>
+        <file crc="628761069" name="modules/dk-four-group-TwoDeadFighter-branding.jar"/>
+        <file crc="3614532579" name="modules/locale/org-netbeans-core-windows_twodeadfighter.jar"/>
+        <file crc="1243540816" name="modules/locale/org-netbeans-core_twodeadfighter.jar"/>
+        <file crc="3896008349" name="update_tracking/dk-four-group-TwoDeadFighter-branding.xml"/>
     </module_version>
 </module>

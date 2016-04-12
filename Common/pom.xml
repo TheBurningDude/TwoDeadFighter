@@ -17,8 +17,8 @@
                 <configuration>
                     <publicPackages>
                         <publicPackage>dk.four.group.common.data</publicPackage>
-                        <publicPackage>dk.four.group.common.events</publicPackage>
                         <publicPackage>dk.four.group.common.services</publicPackage>
+                        <publicPackage>dk.four.group.common.events</publicPackage>
                     </publicPackages>
                 </configuration>
             </plugin>
