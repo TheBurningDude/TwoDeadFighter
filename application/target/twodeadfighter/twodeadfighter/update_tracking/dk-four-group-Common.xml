@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.Common">
-    <module_version install_time="1460467429726" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1460469089262" last="true" origin="installer" specification_version="1.0">
         <file crc="2728984555" name="config/Modules/dk-four-group-Common.xml"/>
-        <file crc="1469298651" name="modules/dk-four-group-Common.jar"/>
-        <file crc="2681915715" name="update_tracking/dk-four-group-Common.xml"/>
+        <file crc="1746830496" name="modules/dk-four-group-Common.jar"/>
     </module_version>
 </module>
