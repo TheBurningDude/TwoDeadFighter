@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
+OpenIDE-Module-Install: dk/four/group/gameengine/main/Installer.class
 OpenIDE-Module-Localizing-Bundle: dk/four/group/gameengine/Bundle.properties
 

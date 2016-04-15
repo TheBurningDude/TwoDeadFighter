@@ -29,6 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author nasib
  */
 public class Game implements ApplicationListener {
+
     private static OrthographicCamera cam;
     private ShapeRenderer sr;
     private final Lookup lookup = Lookup.getDefault();
@@ -38,7 +39,7 @@ public class Game implements ApplicationListener {
     private List<IGamePluginService> gamePlugins;
 
     @Override
-    public void create() {        
+    public void create() {
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
         gameData.setDisplayHeight(Gdx.graphics.getHeight());
 
@@ -49,12 +50,12 @@ public class Game implements ApplicationListener {
         sr = new ShapeRenderer();
 
         Gdx.input.setInputProcessor(new GameInputProcessor(gameData));
-        
+
         Lookup.Result<IGamePluginService> result = lookup.lookupResult(IGamePluginService.class);
         result.addLookupListener(lookupListener);
         gamePlugins = new ArrayList<>(result.allInstances());
         result.allItems();
-        
+
         for (IGamePluginService plugin : gamePlugins) {
             plugin.start(gameData, world);
         }
@@ -68,7 +69,7 @@ public class Game implements ApplicationListener {
 
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
-        
+
         update();
         draw();
     }
@@ -121,7 +122,7 @@ public class Game implements ApplicationListener {
     private Collection<? extends IEntityProcessingService> getEntityProcessingServices() {
         return lookup.lookupAll(IEntityProcessingService.class);
     }
-    
+
     private final LookupListener lookupListener = new LookupListener() {
         @Override
         public void resultChanged(LookupEvent le) {
@@ -129,7 +130,7 @@ public class Game implements ApplicationListener {
                 if (!gamePlugins.contains(updatedGamePlugin)) {
                     updatedGamePlugin.start(gameData, world);
                     gamePlugins.add(updatedGamePlugin);
-               }
+                }
             }
         }
     };

@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dk.four.group.common.data;
 
 import java.io.Serializable;
 import java.util.UUID;
 
-/**
- *
- * @author nasib
- */
 public final class Entity implements Serializable {
+
     private final UUID ID = UUID.randomUUID();
     private EntityType type;
     private float x;
@@ -30,40 +22,40 @@ public final class Entity implements Serializable {
     private float radius;
     private boolean isHit = false;
     private float expiration;
-    
-    public void reduceExpiration(float delta){
+
+    public void reduceExpiration(float delta) {
         this.expiration -= delta;
     }
-    
-    public float getExpiration(){
+
+    public float getExpiration() {
         return expiration;
     }
-    
-    public void setExpiration(float value){
+
+    public void setExpiration(float value) {
         this.expiration = value;
     }
-    
-    public boolean getIsHit(){
+
+    public boolean getIsHit() {
         return isHit;
     }
-    
-    public void setIsHit(boolean hit){
+
+    public void setIsHit(boolean hit) {
         this.isHit = hit;
     }
-    
-    public void setRadius(float r){
+
+    public void setRadius(float r) {
         this.radius = r;
     }
-    
-    public float getRadius(){
+
+    public float getRadius() {
         return radius;
     }
-    
-    public int getLife(){
+
+    public int getLife() {
         return life;
     }
-    
-    public void setLife(int life){
+
+    public void setLife(int life) {
         this.life = life;
     }
 
@@ -98,16 +90,16 @@ public final class Entity implements Serializable {
     public float getX() {
         return x;
     }
-    
-    public void setX(float x){
+
+    public void setX(float x) {
         this.x = x;
     }
 
     public float getY() {
         return y;
     }
-    
-    public void setY(float y){
+
+    public void setY(float y) {
         this.y = y;
     }
 

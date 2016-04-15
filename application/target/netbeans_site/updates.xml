@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.5//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_5.dtd">
-<module_updates timestamp="09/01/14/12/04/2016">
+<module_updates timestamp="49/58/12/15/04/2016">
 
+<module codenamebase="dk.four.group.Player" distribution="Player-1.0-SNAPSHOT.nbm" downloadsize="0" license="52D4AB00" needsrestart="false" releasedate="2016/04/15" targetcluster="twodeadfighter">
+    <manifest OpenIDE-Module="dk.four.group.Player" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160415" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1, dk.four.group.Common &gt; 1.0, org.openide.util.ui &gt; 9.4.1" OpenIDE-Module-Name="Player" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
+
+</module>
 
 
 <module autoload="true" codenamebase="org.netbeans.modules.autoupdate.services" distribution="org-netbeans-modules-autoupdate-services-RELEASE81.nbm" downloadsize="319949" homepage="http://www.netbeans.org/" license="14E6055" moduleauthor="" needsrestart="false" releasedate="2015/10/22" targetcluster="platform">
@@ -20,8 +24,8 @@
     
 </module>
 
-<module codenamebase="dk.four.group.Common" distribution="Common-1.0-SNAPSHOT.nbm" downloadsize="8944" license="52D4AB00" needsrestart="false" releasedate="2016/04/12" targetcluster="twodeadfighter">
-    <manifest OpenIDE-Module="dk.four.group.Common" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160412" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1" OpenIDE-Module-Name="Common" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="dk.four.group.Common" distribution="Common-1.0-SNAPSHOT.nbm" downloadsize="8942" license="52D4AB00" needsrestart="false" releasedate="2016/04/15" targetcluster="twodeadfighter">
+    <manifest OpenIDE-Module="dk.four.group.Common" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160415" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1" OpenIDE-Module-Name="Common" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
@@ -35,8 +39,8 @@
     
 </module>
 
-<module codenamebase="dk.four.group.GameEngine" distribution="GameEngine-1.0-SNAPSHOT.nbm" downloadsize="8900934" license="52D4AB00" needsrestart="false" releasedate="2016/04/12" targetcluster="twodeadfighter">
-    <manifest OpenIDE-Module="dk.four.group.GameEngine" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160412" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1, org.openide.modules &gt; 7.47.1, org.openide.util &gt; 9.5.1, org.openide.util.lookup &gt; 8.32.1, dk.four.group.Common &gt; 1.0" OpenIDE-Module-Name="GameEngine" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="dk.four.group.GameEngine" distribution="GameEngine-1.0-SNAPSHOT.nbm" downloadsize="8900992" license="52D4AB00" needsrestart="false" releasedate="2016/04/15" targetcluster="twodeadfighter">
+    <manifest OpenIDE-Module="dk.four.group.GameEngine" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160415" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1, org.openide.modules &gt; 7.47.1, org.openide.util &gt; 9.5.1, org.openide.util.lookup &gt; 8.32.1, dk.four.group.Common &gt; 1.0" OpenIDE-Module-Name="GameEngine" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
@@ -80,8 +84,8 @@
     
 </module>
 
-<module codenamebase="dk.four.group.SilentUpdate" distribution="SilentUpdate-1.0-SNAPSHOT.nbm" downloadsize="13752" license="52D4AB00" needsrestart="false" releasedate="2016/04/12" targetcluster="twodeadfighter">
-    <manifest OpenIDE-Module="dk.four.group.SilentUpdate" OpenIDE-Module-Display-Category="Infrastructure" OpenIDE-Module-Implementation-Version="1.0-20160412" OpenIDE-Module-Long-Description="A service installing updates of your NetBeansv Platform Application with as few as possible user's interactions." OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1, org.netbeans.modules.autoupdate.services &gt; 1.51.1, org.openide.io &gt; 1.48.1, org.openide.modules &gt; 7.47.1, org.openide.util &gt; 9.5.1" OpenIDE-Module-Name="Silent Update" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Silent Update of Application" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="dk.four.group.SilentUpdate" distribution="SilentUpdate-1.0-SNAPSHOT.nbm" downloadsize="13745" license="52D4AB00" needsrestart="false" releasedate="2016/04/15" targetcluster="twodeadfighter">
+    <manifest OpenIDE-Module="dk.four.group.SilentUpdate" OpenIDE-Module-Display-Category="Infrastructure" OpenIDE-Module-Implementation-Version="1.0-20160415" OpenIDE-Module-Long-Description="A service installing updates of your NetBeansv Platform Application with as few as possible user's interactions." OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1, org.netbeans.modules.autoupdate.services &gt; 1.51.1, org.openide.io &gt; 1.48.1, org.openide.modules &gt; 7.47.1, org.openide.util &gt; 9.5.1" OpenIDE-Module-Name="Silent Update" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="Silent Update of Application" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 
@@ -95,8 +99,8 @@
     
 </module>
 
-<module codenamebase="dk.four.group.TwoDeadFighter.branding" distribution="TwoDeadFighter-branding-1.0-SNAPSHOT.nbm" downloadsize="6086" license="52D4AB00" needsrestart="false" releasedate="2016/04/12" targetcluster="twodeadfighter">
-    <manifest AutoUpdate-Essential-Module="true" OpenIDE-Module="dk.four.group.TwoDeadFighter.branding" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160412" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1" OpenIDE-Module-Name="TwoDeadFighter-branding" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
+<module codenamebase="dk.four.group.TwoDeadFighter.branding" distribution="TwoDeadFighter-branding-1.0-SNAPSHOT.nbm" downloadsize="6082" license="52D4AB00" needsrestart="false" releasedate="2016/04/15" targetcluster="twodeadfighter">
+    <manifest AutoUpdate-Essential-Module="true" OpenIDE-Module="dk.four.group.TwoDeadFighter.branding" OpenIDE-Module-Display-Category="dk.four.group" OpenIDE-Module-Implementation-Version="1.0-20160415" OpenIDE-Module-Long-Description="&lt;undefined&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.26.1" OpenIDE-Module-Name="TwoDeadFighter-branding" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="&lt;undefined&gt;" OpenIDE-Module-Specification-Version="1.0"/>
     
 </module>
 

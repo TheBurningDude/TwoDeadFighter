@@ -1,5 +1,6 @@
 package dk.four.group.player;
 
+
 import dk.four.group.common.data.Entity;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
@@ -18,25 +19,29 @@ import static java.lang.Math.sqrt;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
 
-
 @ServiceProvider(service = IEntityProcessingService.class)
 public class PlayerControlSystem implements IEntityProcessingService {
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         float x = entity.getX();
         float y = entity.getY();
+        float dt = gameData.getDelta();
+        float dx = entity.getDx();
+        float dy = entity.getDy();
+        float acceleration = entity.getAcceleration();
+        float deceleration = entity.getDeacceleration();
+        float maxSpeed = entity.getMaxSpeed();
         float radians = entity.getRadians();
+        float rotationSpeed = entity.getRotationSpeed();
 
-        
         if (entity.getType().equals(PLAYER)) {
             // turning
             if (gameData.getKeys().isDown(LEFT)) {
-                x-=2;
+                radians += rotationSpeed * dt;
             }
             
             if (gameData.getKeys().isDown(RIGHT)) {
-                x-=2;
-
+                radians -= rotationSpeed * dt;
             }
             
             //Shoot
@@ -46,29 +51,42 @@ public class PlayerControlSystem implements IEntityProcessingService {
 
             // accelerating            
             if (gameData.getKeys().isDown(UP)) {
-                y-=2;
-            }
-            
-            if (gameData.getKeys().isDown(DOWN)) {
-                y+=2;
+                dx += cos(radians) * acceleration * dt;
+                dy += sin(radians) * acceleration * dt;
             }
 
+            // deceleration
+            float vec = (float) sqrt(dx * dx + dy * dy);
+            if (vec > 0) {
+                dx -= (dx / vec) * deceleration * dt;
+                dy -= (dy / vec) * deceleration * dt;
+            }
+            if (vec > maxSpeed) {
+                dx = (dx / vec) * maxSpeed;
+                dy = (dy / vec) * maxSpeed;
+            }
 
             // set position
+            x += dx * dt;
             if(x > gameData.getDisplayWidth()){
-                x = gameData.getDisplayWidth();
-            }else if(x < 0){
                 x = 0;
+            }else if(x < 0){
+                x = gameData.getDisplayWidth();
             }
             
+            y += dy * dt;
             if(y > gameData.getDisplayHeight()){
-                y = gameData.getDisplayHeight();
-            }else if(y < 0){
                 y = 0;
+            }else if(y < 0){
+                y = gameData.getDisplayHeight();
             }
             
             // Update entity
             entity.setPosition(x, y);
+            entity.setDx(dx);
+            entity.setDy(dy);
+            entity.setRadians(radians);
+
             updateShape(entity);
         }
     }
@@ -95,5 +113,6 @@ public class PlayerControlSystem implements IEntityProcessingService {
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }
-
+   
+    
 }

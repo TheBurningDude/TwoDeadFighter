@@ -62,6 +62,11 @@
         <module>GameEngine</module>
         <module>Player</module>
         <module>SilentUpdate</module>
+        <module>Enemy</module>
+        <module>Map</module>
+        <module>Health</module>
+        <module>Weapon</module>
+        <module>Collision</module>
     </modules>
 
     <properties>

@@ -3,3 +3,8 @@
 /GameEngine/target/
 /Player/target/
 /SilentUpdate/target/
+/Enemy/target/
+/Collision/target/
+/Weapon/target/
+/Map/target/
+/Health/target/

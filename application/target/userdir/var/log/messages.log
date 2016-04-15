@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Tuesday, April 12, 2016 4:02:00 PM CEST
+>Log Session: Friday, April 15, 2016 2:58:58 PM CEST
 >System Info: 
   Product Version         = TwoDeadFighter 201510222201
   Operating System        = Windows 10 version 10.0 running on amd64
@@ -42,7 +42,7 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.startup/1 [1.61.1.1 201510222201]
 	org.netbeans.api.progress.nb [1.46.1 201510222201]
 	org.netbeans.modules.autoupdate.services [1.51.1 201510222201]
-	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160412 201604121400]
-	dk.four.group.SilentUpdate [1.0 1.0-20160412 201604121400]
-	dk.four.group.Common [1.0 1.0-20160412 201604121400]
-	dk.four.group.GameEngine [1.0 1.0-20160412 201604121400]
+	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160415 201604151257]
+	dk.four.group.SilentUpdate [1.0 1.0-20160415 201604151258]
+	dk.four.group.Common [1.0 1.0-20160415 201604151257]
+	dk.four.group.GameEngine [1.0 1.0-20160415 201604151258]
