@@ -62,15 +62,11 @@
         <module>GameEngine</module>
         <module>Player</module>
         <module>SilentUpdate</module>
-        <module>Enemy</module>
-        <module>Map</module>
-        <module>Health</module>
-        <module>Weapon</module>
-        <module>Collision</module>
     </modules>
 
     <properties>
         <netbeans.version>RELEASE81</netbeans.version>
         <brandingToken>twodeadfighter</brandingToken>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
