@@ -9,6 +9,9 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
@@ -18,6 +21,7 @@ import dk.four.group.common.data.GameData;
 import dk.four.group.common.services.IEntityProcessingService;
 import dk.four.group.common.services.IGamePluginService;
 import dk.four.group.gameengine.managers.GameInputProcessor;
+import dk.four.group.gameengine.managers.ResourceManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -32,14 +36,19 @@ public class Game implements ApplicationListener {
 
     private static OrthographicCamera cam;
     private ShapeRenderer sr;
+    private Sprite s;
+    private Sprite s2;
+    private SpriteBatch sb;
     private final Lookup lookup = Lookup.getDefault();
     private final GameData gameData = new GameData();
     private List<IEntityProcessingService> entityProcessors = new ArrayList<>();
     private Map<String, Entity> world = new ConcurrentHashMap<>();
     private List<IGamePluginService> gamePlugins;
-
+  
     @Override
     public void create() {
+        ResourceManager.load();
+        sb = new SpriteBatch();
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
         gameData.setDisplayHeight(Gdx.graphics.getHeight());
 
@@ -59,6 +68,8 @@ public class Game implements ApplicationListener {
         for (IGamePluginService plugin : gamePlugins) {
             plugin.start(gameData, world);
         }
+        s = new Sprite(ResourceManager.manager.get(ResourceManager.player_location1, Texture.class));
+        s2 = new Sprite(ResourceManager.manager.get(ResourceManager.player_location, Texture.class));
     }
 
     @Override
@@ -69,7 +80,9 @@ public class Game implements ApplicationListener {
 
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
-
+        
+        
+        
         update();
         draw();
     }
@@ -84,23 +97,30 @@ public class Game implements ApplicationListener {
     }
 
     private void draw() {
+        sb.begin();
+        s2.draw(sb);
         for (Entity entity : world.values()) {
-            sr.setColor(1, 1, 1, 1);
+            //sr.setColor(1, 1, 1, 1);
+   
+                s.draw(sb);
+                s.setPosition(entity.getX(),entity.getY());
+                s.setRotation(entity.getRadians());
+                
+            //sr.begin(ShapeRenderer.ShapeType.Line);
+            
+            //float[] shapex = entity.getShapeX();
+            //float[] shapey = entity.getShapeY();
 
-            sr.begin(ShapeRenderer.ShapeType.Line);
+           // for (int i = 0, j = shapex.length - 1;
+             //       i < shapex.length;
+               //     j = i++) {
 
-            float[] shapex = entity.getShapeX();
-            float[] shapey = entity.getShapeY();
-
-            for (int i = 0, j = shapex.length - 1;
-                    i < shapex.length;
-                    j = i++) {
-
-                sr.line(shapex[i], shapey[i], shapex[j], shapey[j]);
-            }
-
-            sr.end();
+                //sr.line(shapex[i], shapey[i], shapex[j], shapey[j]);
+            //}
+            
+                
         }
+        sb.end();
     }
 
     @Override
@@ -117,6 +137,7 @@ public class Game implements ApplicationListener {
 
     @Override
     public void dispose() {
+        ResourceManager.dispose();
     }
 
     private Collection<? extends IEntityProcessingService> getEntityProcessingServices() {

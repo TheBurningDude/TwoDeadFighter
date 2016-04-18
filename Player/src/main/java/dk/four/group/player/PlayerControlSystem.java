@@ -28,42 +28,55 @@ public class PlayerControlSystem implements IEntityProcessingService {
         float dt = gameData.getDelta();
         float dx = entity.getDx();
         float dy = entity.getDy();
-        float acceleration = entity.getAcceleration();
-        float deceleration = entity.getDeacceleration();
-        float maxSpeed = entity.getMaxSpeed();
+        
+//        float acceleration = entity.getAcceleration();
+//        float deceleration = entity.getDeacceleration();
+//        float maxSpeed = entity.getMaxSpeed();
         float radians = entity.getRadians();
-        float rotationSpeed = entity.getRotationSpeed();
-
+//        float rotationSpeed = entity.getRotationSpeed();
+        
         if (entity.getType().equals(PLAYER)) {
             // turning
             if (gameData.getKeys().isDown(LEFT)) {
-                radians += rotationSpeed * dt;
+                x -= 2;
+                radians = 180;
+//radians = (float) (Math.PI);
             }
             
             if (gameData.getKeys().isDown(RIGHT)) {
-                radians -= rotationSpeed * dt;
+                x += 2;
+                radians = 0;
             }
-            
+            if (gameData.getKeys().isDown(UP)) {
+                y += 2;
+                radians = 90;
+    //radians = (float) (Math.PI/2);
+            }
+            if (gameData.getKeys().isDown(DOWN)) {
+                y -= 2;
+                radians = 270;
+///radians = (float) ((3*Math.PI)/2);
+            }
+            //http://math.rice.edu/~pcmi/sphere/degrad.gif
+            if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(LEFT)) {
+                    radians = 135;
+//radians = (float) ((3*Math.PI)/4);
+            }
+            if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(RIGHT)) {
+                    radians = 45;
+//radians = (float) (Math.PI/4);
+            }
+            if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(LEFT)) {
+                    radians = 225;
+//radians = (float) ((5*Math.PI)/4);
+            }
+            if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(RIGHT)) {
+                    radians = 315;
+//radians = (float) ((7*Math.PI)/4);
+            }
             //Shoot
             if(gameData.getKeys().isDown(SPACE)){
                 gameData.addEvent(new Event(EventType.PLAYER_SHOOT));
-            }
-
-            // accelerating            
-            if (gameData.getKeys().isDown(UP)) {
-                dx += cos(radians) * acceleration * dt;
-                dy += sin(radians) * acceleration * dt;
-            }
-
-            // deceleration
-            float vec = (float) sqrt(dx * dx + dy * dy);
-            if (vec > 0) {
-                dx -= (dx / vec) * deceleration * dt;
-                dy -= (dy / vec) * deceleration * dt;
-            }
-            if (vec > maxSpeed) {
-                dx = (dx / vec) * maxSpeed;
-                dy = (dy / vec) * maxSpeed;
             }
 
             // set position
@@ -109,7 +122,6 @@ public class PlayerControlSystem implements IEntityProcessingService {
 
         shapex[3] = (float) (x + Math.cos(radians + 4 * 3.1415f / 5) * 8);
         shapey[3] = (float) (y + Math.sin(radians + 4 * 3.1415f / 5) * 8);
-
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module codename="dk.four.group.Player">
+    <module_version install_time="1460990498696" last="true" origin="Sample Update Center" specification_version="1.0">
+        <file crc="1159029059" name="config/Modules/dk-four-group-Player.xml"/>
+        <file crc="337907758" name="modules/dk-four-group-Player.jar"/>
+        <file crc="1015876392" name="modules/ext/dk.four.group.Player/com-badlogicgames-gdx/gdx.jar"/>
+    </module_version>
+</module>

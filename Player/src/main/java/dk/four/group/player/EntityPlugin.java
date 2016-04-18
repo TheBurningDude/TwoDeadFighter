@@ -1,5 +1,6 @@
 package dk.four.group.player;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import dk.four.group.common.data.Entity;
 import static dk.four.group.common.data.EntityType.PLAYER;
@@ -17,19 +18,19 @@ public class EntityPlugin implements IGamePluginService {
 
     private Map<String, Entity> world;
     private Entity player;
-    Texture playertext;
-    
+    private Texture playertext;
     public EntityPlugin() {
     }
 
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
+       
         this.world = world;
         // Add entities to the world
         player = createPlayerShip(gameData);
         world.put(player.getID(), player);
-        //ResourceManager.load();
-        //playertext = ResourceManager.manager.get(ResourceManager.player_location);
+        
+     
         
     }
 
@@ -42,9 +43,8 @@ public class EntityPlugin implements IGamePluginService {
         playerShip.setMaxSpeed(300);
         playerShip.setAcceleration(200);
         playerShip.setDeacceleration(10);
-
-        playerShip.setShapeX(new float[4]);
-        playerShip.setShapeY(new float[4]);
+        
+        //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
 
         playerShip.setRadians(3.1415f / 2);
         playerShip.setRotationSpeed(5);
@@ -61,7 +61,7 @@ public class EntityPlugin implements IGamePluginService {
         // Remove entities
         world.remove(player.getID());
         
-        //ResourceManager.dispose();
+        
     }
 
 }

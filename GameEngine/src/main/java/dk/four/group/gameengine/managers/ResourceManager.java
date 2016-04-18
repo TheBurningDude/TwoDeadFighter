@@ -6,40 +6,31 @@
 package dk.four.group.gameengine.managers;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.resolvers.AbsoluteFileHandleResolver;
 import com.badlogic.gdx.graphics.Texture;
-import dk.four.group.common.data.GameAssets;
+
 
 /**
  *
  * @author nasib
  */
 public class ResourceManager {
-    private final GameAssets gameAssets;
-    public static AssetManager manager = new AssetManager();
-    public static String player_location;
-    private static String filePath;
-
-    public ResourceManager(GameAssets gameAssets) {
-        this.gameAssets = gameAssets;
-    }
-    
-    public String getFileName(){
-        return filePath;
-    }
-    
+    public static final AssetManager manager = new AssetManager(new AbsoluteFileHandleResolver());
+    public static final String player_location = "D:/TwoDeadFighter/Player/src/main/resources/data/grass.jpg";
+    public static final String player_location1 = "D:/TwoDeadFighter/Player/src/main/resources/data/playertext.png";
+    public static Texture t;
+       
     public static void load(){
-        manager = new AssetManager();
-        filePath = "../player/assets";
-        
-        player_location = filePath+"/playertext.png";
+
         manager.load(player_location, Texture.class);
+        manager.load(player_location1, Texture.class);
         
         while(!manager.update()){
-            System.out.println("Loaded " + manager.getProgress()*100 + "%");
+            System.out.println("Loaded " + manager.getProgress()*100 + "%"); 
+            
         }
         
-        //player_Texture = manager.get(player_location);
-        
+       
     }
     
     public static Boolean isLoaded(){
@@ -52,6 +43,6 @@ public class ResourceManager {
     
     public static void dispose(){
         manager.dispose();
-        manager = null;
+
     }
 }

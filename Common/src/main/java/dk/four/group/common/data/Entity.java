@@ -1,5 +1,7 @@
 package dk.four.group.common.data;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -22,6 +24,8 @@ public final class Entity implements Serializable {
     private float radius;
     private boolean isHit = false;
     private float expiration;
+    private Texture s;
+
 
     public void reduceExpiration(float delta) {
         this.expiration -= delta;
@@ -163,5 +167,13 @@ public final class Entity implements Serializable {
     public void setRotationSpeed(int rotationSpeed) {
         this.rotationSpeed = rotationSpeed;
     }
+    
+    public void setSprite(Texture ns){
+        this.s = ns;
+    }
+    public Texture getSprite(){
+        return s;
+    }
+ 
 
 }
