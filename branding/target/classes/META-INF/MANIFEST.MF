@@ -3,8 +3,13 @@ OpenIDE-Module-Localizing-Bundle: dk/four/group/twodeadfighter/brandin
  g/Bundle.properties
 AutoUpdate-Essential-Module: true
 OpenIDE-Module-Specification-Version: 1.0
+<<<<<<< HEAD
 OpenIDE-Module-Implementation-Version: 1.0-20160418
 OpenIDE-Module-Build-Version: 201604181440
+=======
+OpenIDE-Module-Implementation-Version: 1.0-20160416
+OpenIDE-Module-Build-Version: 201604161610
+>>>>>>> origin/master
 OpenIDE-Module: dk.four.group.TwoDeadFighter.branding
 OpenIDE-Module-Public-Packages: -
 OpenIDE-Module-Requires: org.openide.modules.ModuleFormat1

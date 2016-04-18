@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 #Mon Apr 18 16:41:26 CEST 2016
 org.openide.util.ui.OpenIDE-Module-Install=\u0000
+=======
+#Sat Apr 16 18:11:54 CEST 2016
+org.openide.util.ui.OpenIDE-Module-Install=\u0000
+dk.four.group.Player.OpenIDE-Module-Layer=\u0000
+>>>>>>> origin/master
 org.netbeans.api.annotations.common.OpenIDE-Module-Install=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Layer=\u0000
 org.openide.filesystems.OpenIDE-Module-Hide-Classpath-Packages=\u0000
@@ -18,6 +24,10 @@ dk.four.group.SilentUpdate.OpenIDE-Module-Layer=org/netbeans/modules/autoupdate/
 org.netbeans.core.startup.base.OpenIDE-Module-Install=\u0000
 org.netbeans.libs.asm.OpenIDE-Module-Deprecated=\u0000
 org.openide.awt.OpenIDE-Module-Install=\u0000
+<<<<<<< HEAD
+=======
+dk.four.group.Player.OpenIDE-Module-Description=\u0000
+>>>>>>> origin/master
 org.netbeans.modules.autoupdate.services.AutoUpdate-Show-In-Client=false
 org.openide.util.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.bootstrap.AutoUpdate-Show-In-Client=false
@@ -44,6 +54,10 @@ org.netbeans.libs.asm.OpenIDE-Module-Layer=\u0000
 org.netbeans.bootstrap.OpenIDE-Module-Install=\u0000
 org.openide.modules.OpenIDE-Module-Layer=\u0000
 org.openide.util.OpenIDE-Module-Install=\u0000
+<<<<<<< HEAD
+=======
+dk.four.group.Player.OpenIDE-Module-Deprecated=\u0000
+>>>>>>> origin/master
 org.netbeans.api.progress.OpenIDE-Module-Install=\u0000
 org.netbeans.bootstrap.OpenIDE-Module-Description=\u0000
 org.netbeans.bootstrap.OpenIDE-Module-Layer=\u0000
@@ -53,12 +67,22 @@ org.netbeans.api.intent.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.api.progress.AutoUpdate-Show-In-Client=false
 org.netbeans.api.io.OpenIDE-Module-Deprecated=\u0000
 dk.four.group.GameEngine.OpenIDE-Module-Description=\u0000
+<<<<<<< HEAD
 org.openide.util.ui.AutoUpdate-Show-In-Client=false
 org.netbeans.core.startup.base.AutoUpdate-Show-In-Client=false
+=======
+dk.four.group.Player.OpenIDE-Module-Hide-Classpath-Packages=\u0000
+org.netbeans.core.startup.base.AutoUpdate-Show-In-Client=false
+org.openide.util.ui.AutoUpdate-Show-In-Client=false
+>>>>>>> origin/master
 dk.four.group.Common.OpenIDE-Module-Deprecated=\u0000
 org.openide.util.OpenIDE-Module-Description=\u0000
 org.netbeans.api.progress.OpenIDE-Module-Layer=\u0000
 dk.four.group.TwoDeadFighter.branding.OpenIDE-Module-Install=\u0000
+<<<<<<< HEAD
+=======
+dk.four.group.Player.OpenIDE-Module-Install=\u0000
+>>>>>>> origin/master
 org.netbeans.api.io.OpenIDE-Module-Layer=\u0000
 org.netbeans.api.intent.OpenIDE-Module-Layer=\u0000
 org.openide.util.ui.OpenIDE-Module-Description=\u0000
@@ -83,8 +107,13 @@ org.openide.io.AutoUpdate-Show-In-Client=false
 org.netbeans.libs.asm.AutoUpdate-Show-In-Client=false
 org.openide.util.lookup.OpenIDE-Module-Layer=\u0000
 org.openide.util.lookup.OpenIDE-Module-Hide-Classpath-Packages=\u0000
+<<<<<<< HEAD
 org.openide.modules.AutoUpdate-Show-In-Client=false
 org.netbeans.core.startup.AutoUpdate-Show-In-Client=false
+=======
+org.netbeans.core.startup.AutoUpdate-Show-In-Client=false
+org.openide.modules.AutoUpdate-Show-In-Client=false
+>>>>>>> origin/master
 org.netbeans.bootstrap.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.api.progress.nb.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.api.progress.OpenIDE-Module-Description=\u0000
@@ -95,10 +124,18 @@ org.openide.io.OpenIDE-Module-Description=\u0000
 dk.four.group.Common.OpenIDE-Module-Layer=\u0000
 org.netbeans.api.annotations.common.OpenIDE-Module-Description=\u0000
 org.openide.util.ui.OpenIDE-Module-Hide-Classpath-Packages=\u0000
+<<<<<<< HEAD
 dk.four.group.GameEngine.OpenIDE-Module-Install=dk/four/group/gameengine/main/Installer.class
 org.netbeans.api.progress.nb.OpenIDE-Module-Description=\u0000
 org.netbeans.api.intent.AutoUpdate-Show-In-Client=true
 org.openide.util.lookup.AutoUpdate-Show-In-Client=false
+=======
+dk.four.group.Player.AutoUpdate-Show-In-Client=\u0000
+dk.four.group.GameEngine.OpenIDE-Module-Install=dk/four/group/gameengine/main/Installer.class
+org.netbeans.api.progress.nb.OpenIDE-Module-Description=\u0000
+org.openide.util.lookup.AutoUpdate-Show-In-Client=false
+org.netbeans.api.intent.AutoUpdate-Show-In-Client=true
+>>>>>>> origin/master
 org.openide.awt.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.api.io.AutoUpdate-Show-In-Client=true
 org.openide.awt.OpenIDE-Module-Layer=\u0000

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.Common">
+<<<<<<< HEAD
     <module_version install_time="1460990458562" last="true" origin="installer" specification_version="1.0">
         <file crc="2728984555" name="config/Modules/dk-four-group-Common.xml"/>
         <file crc="2594855693" name="modules/dk-four-group-Common.jar"/>
         <file crc="1015876392" name="modules/ext/dk.four.group.Common/com-badlogicgames-gdx/gdx.jar"/>
+=======
+    <module_version install_time="1460823056213" last="true" origin="installer" specification_version="1.0">
+        <file crc="2728984555" name="config/Modules/dk-four-group-Common.xml"/>
+        <file crc="2302874526" name="modules/dk-four-group-Common.jar"/>
+>>>>>>> origin/master
     </module_version>
 </module>

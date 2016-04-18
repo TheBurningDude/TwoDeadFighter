@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="org.netbeans.modules.autoupdate.services">
+<<<<<<< HEAD
     <module_version install_time="1460990458653" last="true" origin="installer" specification_version="1.51.1">
+=======
+    <module_version install_time="1460823056397" last="true" origin="installer" specification_version="1.51.1">
+>>>>>>> origin/master
         <file crc="83784818" name="config/Modules/org-netbeans-modules-autoupdate-services.xml"/>
         <file crc="3806546004" name="modules/ext/locale/updater_ja.jar"/>
         <file crc="97191911" name="modules/ext/locale/updater_pt_BR.jar"/>
