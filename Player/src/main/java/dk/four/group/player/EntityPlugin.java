@@ -27,33 +27,33 @@ public class EntityPlugin implements IGamePluginService {
        
         this.world = world;
         // Add entities to the world
-        player = createPlayerShip(gameData);
+        player = createPlayer(gameData);
         world.put(player.getID(), player);
         
      
         
     }
 
-    private Entity createPlayerShip(GameData gameData) {
-        Entity playerShip = new Entity();
-        playerShip.setType(PLAYER);
+    private Entity createPlayer(GameData gameData) {
+        Entity playerP = new Entity();
+        playerP.setType(PLAYER);
 
-        playerShip.setPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
+        playerP.setPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
 
-        playerShip.setMaxSpeed(300);
-        playerShip.setAcceleration(200);
-        playerShip.setDeacceleration(10);
+        playerP.setMaxSpeed(300);
+        playerP.setAcceleration(200);
+        playerP.setDeacceleration(10);
         
         //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
 
-        playerShip.setRadians(3.1415f / 2);
-        playerShip.setRotationSpeed(5);
+        playerP.setRadians(3.1415f / 2);
+        playerP.setRotationSpeed(5);
 
-        playerShip.setLife(1);
+        playerP.setLife(1);
 
-        playerShip.setRadius(4);
+        playerP.setRadius(4);
 
-        return playerShip;
+        return playerP;
     }
 
     @Override

@@ -27,31 +27,22 @@ public class PlayerControlSystem implements IEntityProcessingService {
         float y = entity.getY();
         float dt = gameData.getDelta();
         float dx = entity.getDx();
-        float dy = entity.getDy();
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin/master
+        float dy = entity.getDx();
+
 //        float acceleration = entity.getAcceleration();
 //        float deceleration = entity.getDeacceleration();
 //        float maxSpeed = entity.getMaxSpeed();
         float radians = entity.getRadians();
 //        float rotationSpeed = entity.getRotationSpeed();
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> origin/master
         if (entity.getType().equals(PLAYER)) {
             // turning
             if (gameData.getKeys().isDown(LEFT)) {
                 x -= 2;
-<<<<<<< HEAD
+
                 radians = 180;
 //radians = (float) (Math.PI);
-=======
-                radians = (float) (Math.PI);
->>>>>>> origin/master
+
             }
             
             if (gameData.getKeys().isDown(RIGHT)) {
@@ -60,7 +51,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
             }
             if (gameData.getKeys().isDown(UP)) {
                 y += 2;
-<<<<<<< HEAD
+
                 radians = 90;
     //radians = (float) (Math.PI/2);
             }
@@ -85,27 +76,10 @@ public class PlayerControlSystem implements IEntityProcessingService {
             if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(RIGHT)) {
                     radians = 315;
 //radians = (float) ((7*Math.PI)/4);
-=======
-                radians = (float) (Math.PI/2);
+
+                //radians = (float) (Math.PI/2);
             }
-            if (gameData.getKeys().isDown(DOWN)) {
-                y -= 2;
-                radians = (float) ((3*Math.PI)/2);
-            }
-            //http://math.rice.edu/~pcmi/sphere/degrad.gif
-            if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(LEFT)) {
-                radians = (float) ((3*Math.PI)/4);
-            }
-            if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(RIGHT)) {
-                radians = (float) (Math.PI/4);
-            }
-            if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(LEFT)) {
-                radians = (float) ((5*Math.PI)/4);
-            }
-            if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(RIGHT)) {
-                radians = (float) ((7*Math.PI)/4);
->>>>>>> origin/master
-            }
+
             //Shoot
             if(gameData.getKeys().isDown(SPACE)){
                 gameData.addEvent(new Event(EventType.PLAYER_SHOOT));

@@ -1,25 +1,11 @@
-<<<<<<< HEAD
-platform=1460990467151
-cluster.bin=1460990467151
-cluster.etc=1460990467151
-cluster.platform=1460990467151
-cluster.twodeadfighter=1460990467151
-user=1460990467151
+platform=1461062007094
+cluster.bin=1461062007094
+cluster.etc=1461062007094
+cluster.platform=1461062007094
+cluster.twodeadfighter=1461062007095
+user=1461062007095
 crc=7
 locale=da_DK
 branding=twodeadfighter
-java.version=1.8.0_71
-java.vm.version=25.71-b15
-=======
-platform=1460823094019
-cluster.bin=1460823094018
-cluster.etc=1460823094019
-cluster.platform=1460823094019
-cluster.twodeadfighter=1460823094020
-user=1460823094020
-crc=7
-locale=da_DK
-branding=twodeadfighter
-java.version=1.8.0_73
-java.vm.version=25.73-b02
->>>>>>> origin/master
+java.version=1.8.0_77
+java.vm.version=25.77-b03

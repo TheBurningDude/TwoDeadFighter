@@ -47,8 +47,8 @@ public class Game implements ApplicationListener {
   
     @Override
     public void create() {
-        ResourceManager.load();
-        sb = new SpriteBatch();
+        //ResourceManager.load();
+        //sb = new SpriteBatch();
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
         gameData.setDisplayHeight(Gdx.graphics.getHeight());
 
@@ -68,8 +68,8 @@ public class Game implements ApplicationListener {
         for (IGamePluginService plugin : gamePlugins) {
             plugin.start(gameData, world);
         }
-        s = new Sprite(ResourceManager.manager.get(ResourceManager.player_location1, Texture.class));
-        s2 = new Sprite(ResourceManager.manager.get(ResourceManager.player_location, Texture.class));
+        //s = new Sprite(ResourceManager.manager.get(ResourceManager.player_location1, Texture.class));
+        //s2 = new Sprite(ResourceManager.manager.get(ResourceManager.player_location, Texture.class));
     }
 
     @Override
@@ -80,8 +80,6 @@ public class Game implements ApplicationListener {
 
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
-        
-        
         
         update();
         draw();
@@ -97,30 +95,30 @@ public class Game implements ApplicationListener {
     }
 
     private void draw() {
-        sb.begin();
-        s2.draw(sb);
+        //sb.begin();
+        //s2.draw(sb);
         for (Entity entity : world.values()) {
-            //sr.setColor(1, 1, 1, 1);
+            sr.setColor(1, 1, 1, 1);
    
-                s.draw(sb);
+                /*s.draw(sb);
                 s.setPosition(entity.getX(),entity.getY());
                 s.setRotation(entity.getRadians());
-                
-            //sr.begin(ShapeRenderer.ShapeType.Line);
+                */
+            sr.begin(ShapeRenderer.ShapeType.Line);
             
-            //float[] shapex = entity.getShapeX();
-            //float[] shapey = entity.getShapeY();
+            float[] shapex = entity.getShapeX();
+            float[] shapey = entity.getShapeY();
 
-           // for (int i = 0, j = shapex.length - 1;
-             //       i < shapex.length;
-               //     j = i++) {
+            for (int i = 0, j = shapex.length - 1;
+                    i < shapex.length;
+                    j = i++) {
 
-                //sr.line(shapex[i], shapey[i], shapex[j], shapey[j]);
-            //}
-            
+                sr.line(shapex[i], shapey[i], shapex[j], shapey[j]);
+            }
+            sr.end();
                 
         }
-        sb.end();
+        //sb.end();
     }
 
     @Override
@@ -137,7 +135,7 @@ public class Game implements ApplicationListener {
 
     @Override
     public void dispose() {
-        ResourceManager.dispose();
+        //ResourceManager.dispose();
     }
 
     private Collection<? extends IEntityProcessingService> getEntityProcessingServices() {

@@ -16,8 +16,10 @@ import com.badlogic.gdx.graphics.Texture;
  */
 public class ResourceManager {
     public static final AssetManager manager = new AssetManager(new AbsoluteFileHandleResolver());
-    public static final String player_location = "D:/TwoDeadFighter/Player/src/main/resources/data/grass.jpg";
-    public static final String player_location1 = "D:/TwoDeadFighter/Player/src/main/resources/data/playertext.png";
+    public static final String player_location = "C:/Users/nasib/Documents/GitHub/TwoDeadFighter/Player/src/main/resources/data/grass.jpg";
+    //"D:/TwoDeadFighter/Player/src/main/resources/data/grass.jpg"
+    public static final String player_location1 = "C:/Users/nasib/Documents/GitHub/TwoDeadFighter/Player/src/main/resources/data/playertext.png";
+    //"D:/TwoDeadFighter/Player/src/main/resources/data/playertext.png"
     public static Texture t;
        
     public static void load(){
