@@ -5,7 +5,8 @@
  */
 package dk.four.group.map;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import dk.four.group.common.data.Entity;
 import static dk.four.group.common.data.EntityType.MAP;
 import dk.four.group.common.data.GameData;
@@ -22,7 +23,8 @@ public class EntityPlugin implements IGamePluginService {
 
     private Map<String, Entity> world;
     private Entity map;
-    private Texture tiles;
+    private TiledMap tiledMap;
+    
     
     public EntityPlugin() {
     }
@@ -34,7 +36,8 @@ public class EntityPlugin implements IGamePluginService {
         // Add entities to the world
         map = createMap(gameData);
         world.put(map.getID(), map);
-        
+        TmxMapLoader loader = new TmxMapLoader();
+        tiledMap = loader.load("assets/testtiles.tmx");
      
         
     }
@@ -45,7 +48,7 @@ public class EntityPlugin implements IGamePluginService {
 
         tiledMap.setPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
 
-        //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
+        //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("assets/playertext.png").toExternalForm()));
 
         return tiledMap;
     }

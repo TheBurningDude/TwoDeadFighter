@@ -33,10 +33,10 @@ public class Test implements IEntityProcessingService{
             float radius = value.getRadius();
             float xUpperLimit = value.getX() + radius;
             float xLowerLimit = value.getX() - radius;
-            float yUppwerLimit = value.getY() + radius;
+            float yUpperLimit = value.getY() + radius;
             float yLowerLimit = value.getY() - radius;
             
-            System.out.println(xLowerLimit + "," + xUpperLimit + "," + yLowerLimit + "," + yUppwerLimit );
+            System.out.println(xLowerLimit + "," + xUpperLimit + "," + yLowerLimit + "," + yUpperLimit );
             
             float entityX = entity.getX();
             float entityY = entity.getY();

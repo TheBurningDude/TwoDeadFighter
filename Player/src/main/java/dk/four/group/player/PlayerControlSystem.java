@@ -1,6 +1,5 @@
 package dk.four.group.player;
 
-
 import dk.four.group.common.data.Entity;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
@@ -22,9 +21,10 @@ import org.openide.util.lookup.ServiceProvider;
 
 @ServiceProvider(service = IEntityProcessingService.class)
 public class PlayerControlSystem implements IEntityProcessingService {
+
     final int MAX_BULLETS = 4;
     ArrayList<Bullet> bullets;
-    
+
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         float x = entity.getX();
@@ -33,22 +33,19 @@ public class PlayerControlSystem implements IEntityProcessingService {
         float dx = entity.getDx();
         float dy = entity.getDx();
 
-//        float acceleration = entity.getAcceleration();
-//        float deceleration = entity.getDeacceleration();
-//        float maxSpeed = entity.getMaxSpeed();
         float radians = entity.getRadians();
-//        float rotationSpeed = entity.getRotationSpeed();
 
         if (entity.getType().equals(PLAYER)) {
-            // turning
+
+            // movement
             if (gameData.getKeys().isDown(LEFT)) {
                 x -= 2;
 
-                radians = 180;
-//radians = (float) (Math.PI);
+                //radians = 180;
+                radians = (float) (Math.PI);
 
             }
-            
+
             if (gameData.getKeys().isDown(RIGHT)) {
                 x += 2;
                 radians = 0;
@@ -56,54 +53,53 @@ public class PlayerControlSystem implements IEntityProcessingService {
             if (gameData.getKeys().isDown(UP)) {
                 y += 2;
 
-                radians = 90;
-    //radians = (float) (Math.PI/2);
+                //radians = 90;
+                radians = (float) (Math.PI / 2);
             }
             if (gameData.getKeys().isDown(DOWN)) {
                 y -= 2;
-                radians = 270;
-///radians = (float) ((3*Math.PI)/2);
+                //radians = 270;
+                radians = (float) ((3 * Math.PI) / 2);
             }
+            
             //http://math.rice.edu/~pcmi/sphere/degrad.gif
             if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(LEFT)) {
-                    radians = 135;
-//radians = (float) ((3*Math.PI)/4);
+                //radians = 135;
+                radians = (float) ((3 * Math.PI) / 4);
             }
             if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(RIGHT)) {
-                    radians = 45;
-//radians = (float) (Math.PI/4);
+                //radians = 45;
+                radians = (float) (Math.PI / 4);
             }
             if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(LEFT)) {
-                    radians = 225;
-//radians = (float) ((5*Math.PI)/4);
+                //radians = 225;
+                radians = (float) ((5 * Math.PI) / 4);
             }
             if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(RIGHT)) {
-                    radians = 315;
-//radians = (float) ((7*Math.PI)/4);
-
-                //radians = (float) (Math.PI/2);
+                //radians = 315;
+                radians = (float) ((7 * Math.PI) / 4);
             }
 
             //Shoot
-            if(gameData.getKeys().isDown(SPACE)){
+            if (gameData.getKeys().isDown(SPACE)) {
                 gameData.addEvent(new Event(EventType.PLAYER_SHOOT));
             }
 
             // set position
             x += dx * dt;
-            if(x > gameData.getDisplayWidth()){
+            if (x > gameData.getDisplayWidth()) {
                 x = gameData.getDisplayWidth();
-            }else if(x < 0){
+            } else if (x < 0) {
                 x = 0;
             }
-            
+
             y += dy * dt;
-            if(y > gameData.getDisplayHeight()){
+            if (y > gameData.getDisplayHeight()) {
                 y = gameData.getDisplayHeight();
-            }else if(y < 0){
+            } else if (y < 0) {
                 y = 0;
             }
-            
+
             // Update entity
             entity.setPosition(x, y);
             entity.setDx(dx);
@@ -135,19 +131,19 @@ public class PlayerControlSystem implements IEntityProcessingService {
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }
-    
-        public void shoot(Entity entity, GameData gameData) {
- 
+
+    public void shoot(Entity entity, GameData gameData) {
+
         float radians = entity.getRadians();
         float x = entity.getX();
         float y = entity.getY();
- 
+
         this.bullets = bullets;
-        if (bullets.size() == MAX_BULLETS) return;
-       
-        bullets.add(new Bullet(x, y, radians));
+        if (bullets.size() == MAX_BULLETS) {
+            return;
         }
-        
-   
-    
+
+        bullets.add(new Bullet(x, y, radians));
+    }
+
 }
