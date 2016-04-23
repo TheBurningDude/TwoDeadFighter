@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.Collision">
-    <module_version install_time="1461420216962" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1461435500611" last="true" origin="installer" specification_version="1.0">
         <file crc="3716957704" name="config/Modules/dk-four-group-Collision.xml"/>
-        <file crc="3300743419" name="modules/dk-four-group-Collision.jar"/>
+        <file crc="3352802466" name="modules/dk-four-group-Collision.jar"/>
     </module_version>
 </module>

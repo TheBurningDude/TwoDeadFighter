@@ -113,8 +113,13 @@ public class Game implements ApplicationListener {
             if(_assetManager.isLoaded(a.getPath())){
                 sb.begin();
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
-                
-                sb.draw(t, entity.getX(), entity.getY());
+                Sprite s = new Sprite(t);
+                //s.setSize(32, 32);
+                s.setCenter(entity.getX(), entity.getY());
+                s.setRotation(entity.getRadians());
+                s.setPosition(entity.getX(), entity.getY());
+                //sb.draw(t, entity.getX(), entity.getY());
+                s.draw(sb);
 
                 sb.end();
                 

@@ -3,6 +3,7 @@ package dk.four.group.player;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import dk.four.group.common.data.Entity;
+import dk.four.group.common.data.EntityBody;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.ResourceManager;
@@ -19,7 +20,7 @@ public class EntityPlugin implements IGamePluginService {
     private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/playertext.png";
     private Map<String, Entity> world;
     private Entity player;
-    private Texture playertext;
+    
     public EntityPlugin() {
     }
 
@@ -51,7 +52,7 @@ public class EntityPlugin implements IGamePluginService {
         playerP.setRotationSpeed(5);
         playerP.setAsset(ResourceManager.getAsset(FILE_PATH));
         playerP.setLife(1);
-
+        playerP.setEntityBody(new EntityBody(5, 5, EntityBody.CollisionShape.CIRCLE));
         playerP.setRadius(4);
 
         return playerP;

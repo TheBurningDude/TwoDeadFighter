@@ -25,14 +25,23 @@ public final class Entity implements Serializable {
     private boolean isHit = false;
     private float expiration;
     private Asset asset;
-
-
+    private EntityBody body;
+    
+    
     public void reduceExpiration(float delta) {
         this.expiration -= delta;
     }
 
     public float getExpiration() {
         return expiration;
+    }
+    
+    public EntityBody getEntityBody(){
+            return body;
+    }
+    
+    public void setEntityBody(EntityBody eb){
+        this.body = eb;
     }
 
     public void setExpiration(float value) {
@@ -127,7 +136,7 @@ public final class Entity implements Serializable {
     public void setMaxSpeed(float maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
-
+    
     public float getAcceleration() {
         return acceleration;
     }
@@ -171,10 +180,11 @@ public final class Entity implements Serializable {
     public Asset getAsset(){
         return asset;
     }
+    
     public void setAsset(Asset a){
         this.asset = a;
     }
-
+    
     @Override
     public String toString() {
         return "Entity{" + "ID=" + ID + ", type=" + type + ", x=" + x + ", y=" + y + ", dx=" + dx + ", dy=" + dy + ", radians=" + radians + ", maxSpeed=" + maxSpeed + ", acceleration=" + acceleration + ", deacceleration=" + deacceleration + ", shapeX=" + shapeX + ", shapeY=" + shapeY + ", rotationSpeed=" + rotationSpeed + ", life=" + life + ", radius=" + radius + ", isHit=" + isHit + ", expiration=" + expiration + '}';

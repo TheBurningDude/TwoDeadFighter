@@ -41,8 +41,8 @@ public class PlayerControlSystem implements IEntityProcessingService {
             if (gameData.getKeys().isDown(LEFT)) {
                 x -= 2;
 
-                //radians = 180;
-                radians = (float) (Math.PI);
+                radians = 180;
+                //radians = (float) (Math.PI);
 
             }
 
@@ -53,31 +53,31 @@ public class PlayerControlSystem implements IEntityProcessingService {
             if (gameData.getKeys().isDown(UP)) {
                 y += 2;
 
-                //radians = 90;
-                radians = (float) (Math.PI / 2);
+                radians = 90;
+                //radians = (float) (Math.PI / 2);
             }
             if (gameData.getKeys().isDown(DOWN)) {
                 y -= 2;
-                //radians = 270;
-                radians = (float) ((3 * Math.PI) / 2);
+                radians = 270;
+                ///radians = (float) ((3 * Math.PI) / 2);
             }
             
             //http://math.rice.edu/~pcmi/sphere/degrad.gif
             if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(LEFT)) {
-                //radians = 135;
-                radians = (float) ((3 * Math.PI) / 4);
+                radians = 135;
+                //radians = (float) ((3 * Math.PI) / 4);
             }
             if (gameData.getKeys().isDown(UP) && gameData.getKeys().isDown(RIGHT)) {
-                //radians = 45;
-                radians = (float) (Math.PI / 4);
+                radians = 45;
+                //radians = (float) (Math.PI / 4);
             }
             if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(LEFT)) {
-                //radians = 225;
-                radians = (float) ((5 * Math.PI) / 4);
+                radians = 225;
+                //radians = (float) ((5 * Math.PI) / 4);
             }
             if (gameData.getKeys().isDown(DOWN) && gameData.getKeys().isDown(RIGHT)) {
-                //radians = 315;
-                radians = (float) ((7 * Math.PI) / 4);
+                radians = 315;
+                //radians = (float) ((7 * Math.PI) / 4);
             }
 
             //Shoot
@@ -88,14 +88,14 @@ public class PlayerControlSystem implements IEntityProcessingService {
             // set position
             x += dx * dt;
             if (x > gameData.getDisplayWidth()) {
-                x = gameData.getDisplayWidth();
+                x = gameData.getDisplayWidth()- 32;
             } else if (x < 0) {
                 x = 0;
             }
 
             y += dy * dt;
             if (y > gameData.getDisplayHeight()) {
-                y = gameData.getDisplayHeight();
+                y = gameData.getDisplayHeight() - 32;
             } else if (y < 0) {
                 y = 0;
             }
