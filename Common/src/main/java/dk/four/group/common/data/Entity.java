@@ -174,6 +174,12 @@ public final class Entity implements Serializable {
     public Texture getSprite(){
         return s;
     }
+
+    @Override
+    public String toString() {
+        return "Entity{" + "ID=" + ID + ", type=" + type + ", x=" + x + ", y=" + y + ", dx=" + dx + ", dy=" + dy + ", radians=" + radians + ", maxSpeed=" + maxSpeed + ", acceleration=" + acceleration + ", deacceleration=" + deacceleration + ", shapeX=" + shapeX + ", shapeY=" + shapeY + ", rotationSpeed=" + rotationSpeed + ", life=" + life + ", radius=" + radius + ", isHit=" + isHit + ", expiration=" + expiration + ", s=" + s + '}';
+    }
  
+    
 
 }

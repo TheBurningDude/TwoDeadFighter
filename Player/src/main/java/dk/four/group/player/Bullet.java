@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
 import dk.four.group.common.data.Entity;
 import dk.four.group.common.data.GameData;
+import java.util.ArrayList;
 
 public class Bullet {
 	Entity entity;
@@ -19,11 +20,14 @@ public class Bullet {
         private float height = gameData.getDisplayHeight();
 	private float lifeTime;
 	private float lifeTimer;
+        private ArrayList<Bullet> bullets;
 	      
 	private boolean remove;
 	
-	public Bullet() {
-		
+	public Bullet(float x, float y, float radians) {
+		this.x = x;
+                this.y = y;
+                this.radians = radians;
 		float speed = 350;
 		dx = MathUtils.cos(radians) * speed;
 		dy = MathUtils.sin(radians) * speed;
@@ -59,7 +63,14 @@ public class Bullet {
 		if(lifeTimer > lifeTime) {
 			remove = true;
 		}
-		
+                
+		for(int i = 0; i < bullets.size(); i++) {
+			bullets.get(i).update(dt);
+			if(bullets.get(i).shouldRemove()) {
+				bullets.remove(i);
+				i--;
+			}
+		}
 	}
 	
 	public void draw(ShapeRenderer sr) {
@@ -67,6 +78,10 @@ public class Bullet {
 		sr.begin(ShapeType.Filled);
 		sr.circle(x - width / 2, y - height / 2, width / 2);
 		sr.end();
+                
+                for(int i = 0; i < bullets.size(); i++) {
+			bullets.get(i).draw(sr);
+		}
 	}
 	
 }

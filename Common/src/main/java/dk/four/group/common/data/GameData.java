@@ -60,4 +60,9 @@ public class GameData {
         return displayHeight;
     }
 
+    @Override
+    public String toString() {
+        return "GameData{" + "delta=" + delta + ", displayWidth=" + displayWidth + ", displayHeight=" + displayHeight + ", keys=" + keys + ", events=" + events + '}';
+    }
+
 }

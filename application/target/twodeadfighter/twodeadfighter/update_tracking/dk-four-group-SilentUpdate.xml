@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.SilentUpdate">
-    <module_version install_time="1461061982601" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1461149033304" last="true" origin="installer" specification_version="1.0">
         <file crc="654198082" name="config/Modules/dk-four-group-SilentUpdate.xml"/>
-        <file crc="1855294449" name="modules/dk-four-group-SilentUpdate.jar"/>
+        <file crc="1171462200" name="modules/dk-four-group-SilentUpdate.jar"/>
     </module_version>
 </module>

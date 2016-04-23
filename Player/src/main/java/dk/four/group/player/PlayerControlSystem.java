@@ -16,11 +16,15 @@ import dk.four.group.common.services.IEntityProcessingService;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
+import java.util.ArrayList;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
 
 @ServiceProvider(service = IEntityProcessingService.class)
 public class PlayerControlSystem implements IEntityProcessingService {
+    final int MAX_BULLETS = 4;
+    ArrayList<Bullet> bullets;
+    
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         float x = entity.getX();
@@ -131,6 +135,19 @@ public class PlayerControlSystem implements IEntityProcessingService {
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }
+    
+        public void shoot(Entity entity, GameData gameData) {
+ 
+        float radians = entity.getRadians();
+        float x = entity.getX();
+        float y = entity.getY();
+ 
+        this.bullets = bullets;
+        if (bullets.size() == MAX_BULLETS) return;
+       
+        bullets.add(new Bullet(x, y, radians));
+        }
+        
    
     
 }

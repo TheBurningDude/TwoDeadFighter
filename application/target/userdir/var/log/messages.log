@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Tuesday, April 19, 2016 12:33:28 PM CEST
+>Log Session: Wednesday, April 20, 2016 1:07:10 PM CEST
 >System Info: 
   Product Version         = TwoDeadFighter 201510222201
   Operating System        = Windows 10 version 10.0 running on amd64
@@ -23,7 +23,9 @@
 INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\branding\target\classes
 INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\SilentUpdate\target\classes
 INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Common\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Player\target\classes
 INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\GameEngine\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Collision\target\classes
 INFO [org.netbeans.core.modules]: Using file:/C:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/twodeadfighter/../../../SilentUpdate/target/classes/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml as layer for dk.four.group.SilentUpdate not jar:file:/C:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/twodeadfighter/twodeadfighter/modules/dk-four-group-SilentUpdate.jar!/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml
 INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.openide.util.lookup [8.32.1 201510222201]
@@ -43,34 +45,14 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.startup/1 [1.61.1.1 201510222201]
 	org.netbeans.api.progress.nb [1.46.1 201510222201]
 	org.netbeans.modules.autoupdate.services [1.51.1 201510222201]
-	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160419 201604191032]
-	dk.four.group.SilentUpdate [1.0 1.0-20160419 201604191032]
-	dk.four.group.Common [1.0 1.0-20160419 201604191032]
-	dk.four.group.GameEngine [1.0 1.0-20160419 201604191032]
+	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160420 201604201040]
+	dk.four.group.SilentUpdate [1.0 1.0-20160420 201604201040]
+	dk.four.group.Common [1.0 1.0-20160420 201604201040]
+	dk.four.group.Player [1.0 1.0-20160420 201604201040]
+	dk.four.group.Map [1.0 1.0-20160420 201604201040]
+	dk.four.group.GameEngine [1.0 1.0-20160420 201604201040]
+	dk.four.group.Collision [1.0 1.0-20160420 201604201046]
 INFO [org.netbeans.modules.autoupdate.silentupdate]: None for install
 INFO [null]: Last record repeated again.
 INFO [null]: Last record repeated again.
-INFO [null]: Last record repeated again.
-INFO [null]: Last record repeated again.
-INFO [org.netbeans.modules.autoupdate.silentupdate]: Update found: Map[dk.four.group.Map/1.0]
-INFO [org.netbeans.updater]: 780: Unpacking dk-four-group-Map.nbm
-INFO [org.netbeans.updater]: File installed C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\config\Modules\dk-four-group-Map.xml@0
-INFO [org.netbeans.updater]: Copied file netbeans/config/Modules/dk-four-group-Map.xml to C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\config\Modules\dk-four-group-Map.xml
-INFO [org.netbeans.updater]: File installed C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\modules\dk-four-group-Map.jar@0
-INFO [org.netbeans.updater]: Copied file netbeans/modules/dk-four-group-Map.jar to C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\modules\dk-four-group-Map.jar
-INFO [org.netbeans.updater]: File installed C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\modules\ext\dk.four.group.Map\com-badlogicgames-gdx\gdx.jar@0
-INFO [org.netbeans.updater]: Copied file netbeans/modules/ext/dk.four.group.Map/com-badlogicgames-gdx/gdx.jar to C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\modules\ext\dk.four.group.Map\com-badlogicgames-gdx\gdx.jar
-INFO [org.netbeans.updater]: File C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\update\download\dk-four-group-Map.nbm deleted.
-INFO [org.netbeans.updater]: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@42837056
-INFO [org.netbeans.updater]: File C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\update_tracking\dk-four-group-Map.xml modified.
-INFO [org.netbeans.updater]: File installed C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\update_tracking\dk-four-group-Map.xml@0
-INFO [org.netbeans.updater]: File C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\update\download\additional_information.xml deleted.
-INFO [org.netbeans.modules.autoupdate.silentupdate]: Install new modules done.
-Turning on modules...
-INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
-	dk.four.group.Map [1.0 1.0-20160419 201604191032]
-Loading module services...
-Loading modules...
-Turning on modules...done.
-INFO [org.netbeans.modules.autoupdate.silentupdate]: None for install
 INFO [null]: Last record repeated again.
