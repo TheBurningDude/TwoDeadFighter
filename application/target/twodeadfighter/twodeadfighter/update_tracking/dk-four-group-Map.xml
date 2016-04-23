@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<module codename="dk.four.group.Map">
-    <module_version install_time="1461418962191" last="true" origin="Sample Update Center" specification_version="1.0">
-        <file crc="308635566" name="config/Modules/dk-four-group-Map.xml"/>
-        <file crc="4178303091" name="modules/dk-four-group-Map.jar"/>
-        <file crc="1015876392" name="modules/ext/dk.four.group.Map/com-badlogicgames-gdx/gdx.jar"/>
-    </module_version>
-</module>

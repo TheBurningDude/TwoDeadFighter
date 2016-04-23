@@ -4,7 +4,7 @@ OpenIDE-Module-Localizing-Bundle: dk/four/group/twodeadfighter/brandin
 AutoUpdate-Essential-Module: true
 OpenIDE-Module-Specification-Version: 1.0
 OpenIDE-Module-Implementation-Version: 1.0-20160423
-OpenIDE-Module-Build-Version: 201604231341
+OpenIDE-Module-Build-Version: 201604231403
 OpenIDE-Module: dk.four.group.TwoDeadFighter.branding
 OpenIDE-Module-Public-Packages: -
 OpenIDE-Module-Requires: org.openide.modules.ModuleFormat1

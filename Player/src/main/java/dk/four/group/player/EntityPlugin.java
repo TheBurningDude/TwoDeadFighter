@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import dk.four.group.common.data.Entity;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
+import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IGamePluginService;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
@@ -15,7 +16,7 @@ import org.openide.util.lookup.ServiceProvider;
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class EntityPlugin implements IGamePluginService {
-
+    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/playertext.png";
     private Map<String, Entity> world;
     private Entity player;
     private Texture playertext;
@@ -24,7 +25,7 @@ public class EntityPlugin implements IGamePluginService {
 
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
-       
+       ResourceManager.createAssest(FILE_PATH);
         this.world = world;
         // Add entities to the world
         player = createPlayer(gameData);
@@ -48,7 +49,7 @@ public class EntityPlugin implements IGamePluginService {
 
         playerP.setRadians(3.1415f / 2);
         playerP.setRotationSpeed(5);
-
+        playerP.setAsset(ResourceManager.getAsset(FILE_PATH));
         playerP.setLife(1);
 
         playerP.setRadius(4);

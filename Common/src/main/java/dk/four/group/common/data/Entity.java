@@ -24,7 +24,7 @@ public final class Entity implements Serializable {
     private float radius;
     private boolean isHit = false;
     private float expiration;
-    private Texture s;
+    private Asset asset;
 
 
     public void reduceExpiration(float delta) {
@@ -168,16 +168,16 @@ public final class Entity implements Serializable {
         this.rotationSpeed = rotationSpeed;
     }
     
-    public void setSprite(Texture ns){
-        this.s = ns;
+    public Asset getAsset(){
+        return asset;
     }
-    public Texture getSprite(){
-        return s;
+    public void setAsset(Asset a){
+        this.asset = a;
     }
 
     @Override
     public String toString() {
-        return "Entity{" + "ID=" + ID + ", type=" + type + ", x=" + x + ", y=" + y + ", dx=" + dx + ", dy=" + dy + ", radians=" + radians + ", maxSpeed=" + maxSpeed + ", acceleration=" + acceleration + ", deacceleration=" + deacceleration + ", shapeX=" + shapeX + ", shapeY=" + shapeY + ", rotationSpeed=" + rotationSpeed + ", life=" + life + ", radius=" + radius + ", isHit=" + isHit + ", expiration=" + expiration + ", s=" + s + '}';
+        return "Entity{" + "ID=" + ID + ", type=" + type + ", x=" + x + ", y=" + y + ", dx=" + dx + ", dy=" + dy + ", radians=" + radians + ", maxSpeed=" + maxSpeed + ", acceleration=" + acceleration + ", deacceleration=" + deacceleration + ", shapeX=" + shapeX + ", shapeY=" + shapeY + ", rotationSpeed=" + rotationSpeed + ", life=" + life + ", radius=" + radius + ", isHit=" + isHit + ", expiration=" + expiration + '}';
     }
  
     
