@@ -1,7 +1,5 @@
 package dk.four.group.common.data;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import java.io.Serializable;
 import java.util.UUID;
 

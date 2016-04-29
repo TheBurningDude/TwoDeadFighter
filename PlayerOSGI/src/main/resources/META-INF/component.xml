@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="dk.four.group.playerosgi">
+   <implementation class="dk.four.group.playerosgi.PlayerControlSystem"/>
+   <implementation class="dk.four.group.playerosgi.EntityPlugin"/>
+   <service>
+      <provide interface="dk.four.group.common.services.IEntityProcessingService"/>
+      <provide interface="dk.four.group.common.services.IGamePluginService"/>
+   </service>
+</scr:component>
