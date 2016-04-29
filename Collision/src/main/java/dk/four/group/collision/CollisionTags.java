@@ -12,7 +12,6 @@ package dk.four.group.collision;
 public class CollisionTags {
     
     public static final int NONE = 0;
-    public static final int PLAYER = 1;
-    public static final int BULLETS = 2;
-    public static final int WALL = 3;
+    public static final int MOVING = 1;
+    public static final int SOLID = 2;
 }
