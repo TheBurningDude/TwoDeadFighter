@@ -17,7 +17,7 @@ import org.openide.util.lookup.ServiceProvider;
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class EntityPlugin implements IGamePluginService {
-    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/playertext.png";
+    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/Wep.png";
     private Map<String, Entity> world;
     private Entity player;
     
@@ -39,12 +39,14 @@ public class EntityPlugin implements IGamePluginService {
     private Entity createPlayer(GameData gameData) {
         Entity playerP = new Entity();
         playerP.setType(PLAYER);
-
-        playerP.setPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
+        
+        playerP.setEntityPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
 
         playerP.setMaxSpeed(300);
         playerP.setAcceleration(200);
         playerP.setDeacceleration(10);
+        playerP.setSize(64);
+        playerP.setRadius(64/2);
         
         //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
 
@@ -52,8 +54,9 @@ public class EntityPlugin implements IGamePluginService {
         playerP.setRotationSpeed(5);
         playerP.setAsset(ResourceManager.getAsset(FILE_PATH));
         playerP.setLife(1);
-        playerP.setEntityBody(new EntityBody(5, 5, EntityBody.CollisionShape.CIRCLE));
-        playerP.setRadius(4);
+        playerP.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.CIRCLE));
+        
+        //playerP.setRadius(32/2);
 
         return playerP;
     }

@@ -82,6 +82,11 @@
             <artifactId>org.eclipse.osgi.services</artifactId>
             <version>3.2.100.v20100503</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>Map</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

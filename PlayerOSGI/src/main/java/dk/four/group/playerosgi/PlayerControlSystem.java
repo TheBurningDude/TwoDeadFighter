@@ -24,8 +24,8 @@ public class PlayerControlSystem implements IEntityProcessingService {
 
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
-        float x = entity.getX();
-        float y = entity.getY();
+        float x = entity.getEntityPosition().getX();
+        float y = entity.getEntityPosition().getY();
         float dt = gameData.getDelta();
         float dx = entity.getDx();
         float dy = entity.getDx();
@@ -98,7 +98,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
             }
 
             // Update entity
-            entity.setPosition(x, y);
+            entity.setEntityPosition(x, y);
             entity.setDx(dx);
             entity.setDy(dy);
             entity.setRadians(radians);
@@ -110,8 +110,8 @@ public class PlayerControlSystem implements IEntityProcessingService {
     private void updateShape(Entity entity) {
         float[] shapex = entity.getShapeX();
         float[] shapey = entity.getShapeY();
-        float x = entity.getX();
-        float y = entity.getY();
+        float x = entity.getEntityPosition().getX();
+        float y = entity.getEntityPosition().getY();
         float radians = entity.getRadians();
 
         shapex[0] = (float) (x + Math.cos(radians) * 8);

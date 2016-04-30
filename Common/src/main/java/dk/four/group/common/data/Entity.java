@@ -7,8 +7,6 @@ public final class Entity implements Serializable {
 
     private final UUID ID = UUID.randomUUID();
     private EntityType type;
-    private float x;
-    private float y;
     private float dx;
     private float dy;
     private float radians;
@@ -22,9 +20,24 @@ public final class Entity implements Serializable {
     private float radius;
     private boolean isHit = false;
     private float expiration;
+    private float size;
     private Asset asset;
     private EntityBody body;
+    private EntityPosition eP;
     
+    public void setSize(float size){
+        this.size = size;
+    }
+    public float getSize(){
+        return size;
+    }
+    
+    public void setEntityPosition(float x, float y){
+        this.eP = new EntityPosition(x, y);
+    }
+    public EntityPosition getEntityPosition(){
+        return eP;
+    }
     
     public void reduceExpiration(float delta) {
         this.expiration -= delta;
@@ -98,27 +111,6 @@ public final class Entity implements Serializable {
         this.dy = dy;
     }
 
-    public float getX() {
-        return x;
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public void setPosition(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
-
     public float getRadians() {
         return radians;
     }
@@ -183,10 +175,7 @@ public final class Entity implements Serializable {
         this.asset = a;
     }
     
-    @Override
-    public String toString() {
-        return "Entity{" + "ID=" + ID + ", type=" + type + ", x=" + x + ", y=" + y + ", dx=" + dx + ", dy=" + dy + ", radians=" + radians + ", maxSpeed=" + maxSpeed + ", acceleration=" + acceleration + ", deacceleration=" + deacceleration + ", shapeX=" + shapeX + ", shapeY=" + shapeY + ", rotationSpeed=" + rotationSpeed + ", life=" + life + ", radius=" + radius + ", isHit=" + isHit + ", expiration=" + expiration + '}';
-    }
+    
  
     
 

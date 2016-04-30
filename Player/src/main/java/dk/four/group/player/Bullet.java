@@ -11,8 +11,8 @@ public class Bullet {
 	Entity entity;
         GameData gameData;
         
-        private float x = entity.getX();
-        private float y = entity.getY();
+        private float x = entity.getEntityPosition().getX();
+        private float y = entity.getEntityPosition().getY();
         private float radians = entity.getRadians();
         private float dx = entity.getDx();
         private float dy = entity.getDy();

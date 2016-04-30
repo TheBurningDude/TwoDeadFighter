@@ -1,34 +1,34 @@
 -------------------------------------------------------------------------------
->Log Session: Friday, April 29, 2016 4:02:11 PM CEST
+>Log Session: Saturday, April 30, 2016 4:01:44 PM CEST
 >System Info: 
   Product Version         = TwoDeadFighter 201510222201
   Operating System        = Windows 10 version 10.0 running on amd64
-  Java; VM; Vendor        = 1.8.0_73; Java HotSpot(TM) 64-Bit Server VM 25.73-b02; Oracle Corporation
-  Runtime                 = Java(TM) SE Runtime Environment 1.8.0_73-b02
-  Java Home               = C:\Program Files\Java\jdk1.8.0_73\jre
+  Java; VM; Vendor        = 1.8.0_71; Java HotSpot(TM) 64-Bit Server VM 25.71-b15; Oracle Corporation
+  Runtime                 = Java(TM) SE Runtime Environment 1.8.0_71-b15
+  Java Home               = C:\Program Files\Java\jdk1.8.0_71\jre
   System Locale; Encoding = da_DK (twodeadfighter); Cp1252
-  Home Directory          = C:\Users\nasib
-  Current Directory       = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter
-  User Directory          = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\userdir
-  Cache Directory         = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\userdir\var\cache
-  Installation            = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\bin
-                            C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\etc
-                            C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\extra
-                            C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform
-                            C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter
-                            C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform
-  Boot & Ext. Classpath   = C:\Program Files\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_73\jre\classes;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\zipfs.jar
-  Application Classpath   = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\boot.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-modules.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util-lookup.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util-ui.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_zh_CN.jar;C:\Program Files\Java\jdk1.8.0_73\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_73\lib\tools.jar
-  Startup Classpath       = C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\asm-all-5.0.1.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\core-base.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\core.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-netbeans-libs-asm.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-openide-filesystems-compat8.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-openide-filesystems.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_ja.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_ru.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\core\locale\core_twodeadfighter.jar
+  Home Directory          = C:\Users\sidon
+  Current Directory       = D:\TwoDeadFighter\application\target\twodeadfighter
+  User Directory          = D:\TwoDeadFighter\application\target\userdir
+  Cache Directory         = D:\TwoDeadFighter\application\target\userdir\var\cache
+  Installation            = D:\TwoDeadFighter\application\target\twodeadfighter\bin
+                            D:\TwoDeadFighter\application\target\twodeadfighter\etc
+                            D:\TwoDeadFighter\application\target\twodeadfighter\extra
+                            D:\TwoDeadFighter\application\target\twodeadfighter\platform
+                            D:\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter
+                            D:\TwoDeadFighter\application\target\twodeadfighter\platform
+  Boot & Ext. Classpath   = C:\Program Files\Java\jdk1.8.0_71\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_71\jre\classes;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\ext\zipfs.jar
+  Application Classpath   = D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\boot.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-modules.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util-lookup.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util-ui.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\org-openide-util.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\boot_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-modules_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-lookup_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util-ui_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\lib\locale\org-openide-util_zh_CN.jar;C:\Program Files\Java\jdk1.8.0_71\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_71\lib\tools.jar
+  Startup Classpath       = D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\asm-all-5.0.1.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\core-base.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\core.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-netbeans-libs-asm.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-openide-filesystems-compat8.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\org-openide-filesystems.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core-base_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\core_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_ja.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_pt_BR.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_ru.jar;D:\TwoDeadFighter\application\target\twodeadfighter\platform\core\locale\org-openide-filesystems_zh_CN.jar;D:\TwoDeadFighter\application\target\twodeadfighter\twodeadfighter\core\locale\core_twodeadfighter.jar
 -------------------------------------------------------------------------------
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\branding\target\classes
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\SilentUpdate\target\classes
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Launcher\target\classes
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Common\target\classes
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\GameEngine\target\classes
-INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: C:\Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Collision\target\classes
-INFO [org.netbeans.modules.netbinox]: Install area set to file:/C:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/twodeadfighter/
-INFO [org.netbeans.core.modules]: Using file:/C:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/twodeadfighter/../../../SilentUpdate/target/classes/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml as layer for dk.four.group.SilentUpdate not jar:file:/C:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/twodeadfighter/twodeadfighter/modules/dk-four-group-SilentUpdate.jar!/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\branding\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\SilentUpdate\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Common\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Map\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\GameEngine\target\classes
+INFO [org.netbeans.core.startup.NbEvents]: Module patch or custom extension: D:\TwoDeadFighter\application\target\twodeadfighter\..\..\..\Collision\target\classes
+INFO [org.netbeans.modules.netbinox]: Install area set to file:/D:/TwoDeadFighter/application/target/twodeadfighter/
+INFO [org.netbeans.core.modules]: Using file:/D:/TwoDeadFighter/application/target/twodeadfighter/../../../SilentUpdate/target/classes/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml as layer for dk.four.group.SilentUpdate not jar:file:/D:/TwoDeadFighter/application/target/twodeadfighter/twodeadfighter/modules/dk-four-group-SilentUpdate.jar!/org/netbeans/modules/autoupdate/silentupdate/resources/layer.xml
 INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.openide.util.lookup [8.32.1 201510222201]
 	org.openide.util [9.5.1 201510222201]
@@ -51,14 +51,137 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.api.progress/1 [1.46.1 201510222201]
 	org.netbeans.api.progress.nb [1.46.1 201510222201]
 	org.netbeans.modules.autoupdate.services [1.51.1 201510222201]
-	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160429 201604291358]
-	dk.four.group.SilentUpdate [1.0 1.0-20160429 201604291358]
+	dk.four.group.TwoDeadFighter.branding [1.0 1.0-20160430 201604301401]
+	dk.four.group.SilentUpdate [1.0 1.0-20160430 201604301401]
 	dk.four.group.PlayerOSGI [1.0.0 1.0.0.SNAPSHOT]
-	dk.four.group.Launcher [1.0 1.0-20160429 201604291358]
-	dk.four.group.Common [1.0 1.0-20160429 201604291358]
-	dk.four.group.GameEngine [1.0 1.0-20160429 201604291358]
-	dk.four.group.Collision [1.0 1.0-20160429 201604291358]
+	dk.four.group.Common [1.0 1.0-20160430 201604301401]
+	dk.four.group.Map [1.0 1.0-20160430 201604301401]
+	dk.four.group.Launcher [1.0 1.0-20160430 201604301401]
+	dk.four.group.GameEngine [1.0 1.0-20160430 201604301401]
+	dk.four.group.Collision [1.0 1.0-20160430 201604301401]
 INFO [org.netbeans.core.netigso.Netigso]: bundle org.eclipse.osgi.services@3.2.100.v20100503 resolved
 INFO [org.netbeans.core.netigso.Netigso]: bundle org.eclipse.osgi@3.9.1.v20140110-1610 started
+INFO [org.netbeans.modules.autoupdate.updateprovider.DownloadListener]: Reading URL file:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/netbeans_site/updates.xml failed (java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet))
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:180)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:148)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+Caused: java.io.IOException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at org.netbeans.modules.autoupdate.updateprovider.DownloadListener.notifyException(DownloadListener.java:103)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.copy(AutoupdateCatalogCache.java:246)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.writeCatalogToCache(AutoupdateCatalogCache.java:99)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogProvider.refresh(AutoupdateCatalogProvider.java:154)
+	at org.netbeans.modules.autoupdate.services.UpdateUnitProviderImpl.refresh(UpdateUnitProviderImpl.java:180)
+	at org.netbeans.api.autoupdate.UpdateUnitProvider.refresh(UpdateUnitProvider.java:196)
+[catch] at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.getSilentUpdateProvider(UpdateHandler.java:188)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.refreshSilentUpdateProvider(UpdateHandler.java:169)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.checkAndHandleUpdates(UpdateHandler.java:47)
+	at org.netbeans.modules.autoupdate.silentupdate.Activator$1.run(Activator.java:28)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+INFO [org.netbeans.modules.autoupdate.updateprovider.DownloadListener]: Reading URL file:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/netbeans_site/updates.xml failed (java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet))
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:180)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:148)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+Caused: java.io.IOException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at org.netbeans.modules.autoupdate.updateprovider.DownloadListener.notifyException(DownloadListener.java:103)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.copy(AutoupdateCatalogCache.java:246)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.writeCatalogToCache(AutoupdateCatalogCache.java:99)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogProvider.refresh(AutoupdateCatalogProvider.java:154)
+	at org.netbeans.modules.autoupdate.services.UpdateUnitProviderImpl.refresh(UpdateUnitProviderImpl.java:180)
+	at org.netbeans.api.autoupdate.UpdateUnitProvider.refresh(UpdateUnitProvider.java:196)
+[catch] at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.refreshSilentUpdateProvider(UpdateHandler.java:176)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.checkAndHandleUpdates(UpdateHandler.java:47)
+	at org.netbeans.modules.autoupdate.silentupdate.Activator$1.run(Activator.java:28)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
 INFO [org.netbeans.modules.autoupdate.silentupdate]: None for install
-INFO [null]: Last record repeated again.
+INFO [org.netbeans.modules.autoupdate.updateprovider.DownloadListener]: Reading URL file:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/netbeans_site/updates.xml failed (java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet))
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:180)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:148)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+Caused: java.io.IOException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at org.netbeans.modules.autoupdate.updateprovider.DownloadListener.notifyException(DownloadListener.java:103)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.copy(AutoupdateCatalogCache.java:246)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.writeCatalogToCache(AutoupdateCatalogCache.java:99)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogProvider.refresh(AutoupdateCatalogProvider.java:154)
+	at org.netbeans.modules.autoupdate.services.UpdateUnitProviderImpl.refresh(UpdateUnitProviderImpl.java:180)
+	at org.netbeans.api.autoupdate.UpdateUnitProvider.refresh(UpdateUnitProvider.java:196)
+[catch] at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.getSilentUpdateProvider(UpdateHandler.java:188)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.refreshSilentUpdateProvider(UpdateHandler.java:169)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.checkAndHandleUpdates(UpdateHandler.java:47)
+	at org.netbeans.modules.autoupdate.silentupdate.Activator$1.run(Activator.java:28)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+INFO [org.netbeans.modules.autoupdate.updateprovider.DownloadListener]: Reading URL file:/Users/nasib/Documents/GitHub/TwoDeadFighter/application/target/netbeans_site/updates.xml failed (java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet))
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+INFO [org.netbeans.modules.autoupdate.silentupdate]: A problem caught while refreshing Update Centers, cause: 
+java.io.FileNotFoundException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:180)
+	at org.netbeans.modules.autoupdate.updateprovider.NetworkAccess$Task$2.call(NetworkAccess.java:148)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+Caused: java.io.IOException: \Users\nasib\Documents\GitHub\TwoDeadFighter\application\target\netbeans_site\updates.xml (Den angivne sti blev ikke fundet)
+	at org.netbeans.modules.autoupdate.updateprovider.DownloadListener.notifyException(DownloadListener.java:103)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.copy(AutoupdateCatalogCache.java:246)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogCache.writeCatalogToCache(AutoupdateCatalogCache.java:99)
+	at org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogProvider.refresh(AutoupdateCatalogProvider.java:154)
+	at org.netbeans.modules.autoupdate.services.UpdateUnitProviderImpl.refresh(UpdateUnitProviderImpl.java:180)
+	at org.netbeans.api.autoupdate.UpdateUnitProvider.refresh(UpdateUnitProvider.java:196)
+[catch] at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.refreshSilentUpdateProvider(UpdateHandler.java:176)
+	at org.netbeans.modules.autoupdate.silentupdate.UpdateHandler.checkAndHandleUpdates(UpdateHandler.java:47)
+	at org.netbeans.modules.autoupdate.silentupdate.Activator$1.run(Activator.java:28)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+INFO [org.netbeans.modules.autoupdate.silentupdate]: None for install

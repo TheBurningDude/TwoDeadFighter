@@ -8,17 +8,20 @@ package dk.four.group.gameengine.main;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import dk.four.group.common.data.Asset;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import dk.four.group.common.data.Entity;
+import dk.four.group.common.data.EntityType;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IEntityProcessingService;
@@ -36,25 +39,26 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Game implements ApplicationListener {
 
-    private static OrthographicCamera cam;
+   private static OrthographicCamera cam;
     private ShapeRenderer sr;
     private final Lookup lookup = Lookup.getDefault();
     private final GameData gameData = new GameData();
     private List<IEntityProcessingService> entityProcessors = new ArrayList<>();
     private Map<String, Entity> world = new ConcurrentHashMap<>();
     private List<IGamePluginService> gamePlugins;
-    
+    private ShapeRenderer _shapeRenderer;
     private AssetManager _assetManager;
     private SpriteBatch sb;
-  
+ 
+   
     @Override
     public void create() {
         //ResourceManager.load();
         //sb = new SpriteBatch();
-        
+        _shapeRenderer = new ShapeRenderer();
         sb = new SpriteBatch();
         _assetManager = new AssetManager();
-        
+
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
         gameData.setDisplayHeight(Gdx.graphics.getHeight());
 
@@ -105,24 +109,40 @@ public class Game implements ApplicationListener {
     }
 
     private void draw() {
-
-        
-        
+      
+        _shapeRenderer.setProjectionMatrix(cam.combined);
         for (Entity entity : world.values()) {
+            
             Asset a = entity.getAsset();
+            
             if(_assetManager.isLoaded(a.getPath())){
                 sb.begin();
+                if(entity.getType() == EntityType.PLAYER){
+                 
+                 
+                _shapeRenderer.begin(ShapeType.Line);
+                _shapeRenderer.setColor(Color.RED);
+                _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
+                
+                }else{
+                _shapeRenderer.begin(ShapeType.Line);
+                _shapeRenderer.setColor(Color.RED);
+                _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY() , entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
+                
+                }
+                
+                
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
                 Sprite s = new Sprite(t);
-                //s.setSize(32, 32);
-                s.setCenter(entity.getX(), entity.getY());
+                s.setSize(entity.getSize(),entity.getSize());
+                //s.setCenter(entity.getX(), entity.getY());
                 s.setRotation(entity.getRadians());
-                s.setPosition(entity.getX(), entity.getY());
+                s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
                 //sb.draw(t, entity.getX(), entity.getY());
                 s.draw(sb);
 
                 sb.end();
-                
+                _shapeRenderer.end();
             }
         }
 
