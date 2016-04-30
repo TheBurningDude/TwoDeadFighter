@@ -18,7 +18,7 @@ import org.openide.util.lookup.ServiceProvider;
 
 /**
  *
- * @author nasib
+ * @author Sidon K. K
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class MapEntityPlugin implements IGamePluginService {
