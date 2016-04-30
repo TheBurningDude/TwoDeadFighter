@@ -1,7 +1,6 @@
 package dk.four.group.player;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
+
 import dk.four.group.common.data.Entity;
 import dk.four.group.common.data.EntityBody;
 import static dk.four.group.common.data.EntityType.PLAYER;
@@ -26,6 +25,7 @@ public class EntityPlugin implements IGamePluginService {
 
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
+        
        ResourceManager.createAssest(FILE_PATH);
         this.world = world;
         // Add entities to the world
@@ -62,7 +62,7 @@ public class EntityPlugin implements IGamePluginService {
     }
 
     @Override
-    public void stop(GameData gameData) {
+    public void stop(GameData gamedata) {
         // Remove entities
         world.remove(player.getID());
         

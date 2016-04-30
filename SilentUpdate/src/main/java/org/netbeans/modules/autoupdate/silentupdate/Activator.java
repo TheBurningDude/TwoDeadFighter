@@ -14,21 +14,21 @@ import org.openide.modules.ModuleInstall;
  */
 public class Activator extends ModuleInstall {
 
-    private final ScheduledExecutorService exector = Executors.newScheduledThreadPool(1);
+   private final ScheduledExecutorService exector = Executors.newScheduledThreadPool(1);
 
     @Override
-    public void restored() {
+    public void restored()
+    {
         exector.scheduleAtFixedRate(doCheck, 10000, 10000, TimeUnit.MILLISECONDS);
     }
 
-    private static final Runnable doCheck = new Runnable() {
-        @Override
-        public void run() {
-            if (UpdateHandler.timeToCheck()) {
-                UpdateHandler.checkAndHandleUpdates();
-            }
-        }
-
-    };
+    private static final Runnable doCheck = () ->
+            {
+                if (UpdateHandler.timeToCheck())
+                {
+                    UpdateHandler.checkAndHandleModules();
+                }
+            };
+    
 
 }

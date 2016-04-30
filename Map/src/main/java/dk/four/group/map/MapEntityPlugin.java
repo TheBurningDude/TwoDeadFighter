@@ -22,6 +22,7 @@ import org.openide.util.lookup.ServiceProvider;
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class MapEntityPlugin implements IGamePluginService {
+    
     private static final String GRASS_PATH = "../../../Map/src/main/java/dk/four/group/map/data/tile.png";
     private Map<String, Entity> world;
     private List<Entity> map = new ArrayList<>();
@@ -42,7 +43,7 @@ public class MapEntityPlugin implements IGamePluginService {
     private List <Entity> createMap() {
         List <Entity> e = new ArrayList<>();
         Entity mapEntity1 = new Entity();
-        
+        mapEntity1.setAsset(ResourceManager.getAsset(GRASS_PATH));
         mapEntity1.setType(EntityType.MAP);
         mapEntity1.setEntityPosition(100 , 100 );
        
@@ -51,7 +52,7 @@ public class MapEntityPlugin implements IGamePluginService {
         //mapEntity1.setRadius(128);
         mapEntity1.setEntityBody(new EntityBody(128, 128, EntityBody.CollisionShape.RECTANGLE));
         
-        mapEntity1.setAsset(ResourceManager.getAsset(GRASS_PATH));
+        //mapEntity1.setAsset(ResourceManager.getAsset(GRASS_PATH));
         
         Entity mapEntity2 = new Entity();
         
@@ -98,9 +99,10 @@ public class MapEntityPlugin implements IGamePluginService {
     }
     
     @Override
-    public void stop(GameData gameData) {
-        // Remove entity
-        //world.remove(map.getID());
+    public void stop(GameData gamedata) {
+        for(Entity e : map){
+            world.remove(e.getID());
+        }
     }
     
 }

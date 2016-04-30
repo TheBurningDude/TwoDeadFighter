@@ -30,7 +30,7 @@ public class CollisionPlugin implements IGamePluginService{
         this.processor = new CollisionProcessingService();
         
         for(Entity e : world.values()){
-            //add collision to allle entities in worlld
+            
         }
     }
 

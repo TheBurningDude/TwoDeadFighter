@@ -60,7 +60,7 @@ public class EntityPlugin implements IGamePluginService {
     }
 
     @Override
-    public void stop(GameData gameData) {
+    public void stop(GameData gamedata) {
         // Remove entities
         world.remove(player.getID());
         

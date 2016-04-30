@@ -32,6 +32,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.openide.util.Lookup.Item;
 
 /**
  *
@@ -40,12 +42,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Game implements ApplicationListener {
 
    private static OrthographicCamera cam;
-    private ShapeRenderer sr;
     private final Lookup lookup = Lookup.getDefault();
-    private final GameData gameData = new GameData();
-    private List<IEntityProcessingService> entityProcessors = new ArrayList<>();
+    private final GameData gameData = new GameData(); 
     private Map<String, Entity> world = new ConcurrentHashMap<>();
-    private List<IGamePluginService> gamePlugins;
+    private List<IGamePluginService> gamePlugins = new CopyOnWriteArrayList<>(); 
+    private Lookup.Result<IGamePluginService> result;
+    
     private ShapeRenderer _shapeRenderer;
     private AssetManager _assetManager;
     private SpriteBatch sb;
@@ -53,12 +55,13 @@ public class Game implements ApplicationListener {
    
     @Override
     public void create() {
-        //ResourceManager.load();
-        //sb = new SpriteBatch();
+
         _shapeRenderer = new ShapeRenderer();
-        sb = new SpriteBatch();
         _assetManager = new AssetManager();
 
+        
+        sb = new SpriteBatch();
+        
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
         gameData.setDisplayHeight(Gdx.graphics.getHeight());
 
@@ -66,21 +69,16 @@ public class Game implements ApplicationListener {
         cam.translate(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 2);
         cam.update();
 
-        sr = new ShapeRenderer();
-
         Gdx.input.setInputProcessor(new GameInputProcessor(gameData));
 
-        Lookup.Result<IGamePluginService> result = lookup.lookupResult(IGamePluginService.class);
+        result = lookup.lookupResult(IGamePluginService.class);
         result.addLookupListener(lookupListener);
-        gamePlugins = new ArrayList<>(result.allInstances());
-        result.allItems();
 
-        for (IGamePluginService plugin : gamePlugins) {
-            plugin.start(gameData, world);
+
+        for (Item<IGamePluginService> plugin : result.allItems()) {
+            plugin.getInstance().start(gameData, world);
         }
-        //s = new Sprite(ResourceManager.manager.get(ResourceManager.player_location1, Texture.class));
-        //s2 = new Sprite(ResourceManager.manager.get(ResourceManager.player_location, Texture.class));
-        
+          
         loadAssets();
         _assetManager.finishLoading();
     }
@@ -93,7 +91,7 @@ public class Game implements ApplicationListener {
 
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
-        
+        loadAssets();
         update();
         draw();
     }
@@ -111,6 +109,7 @@ public class Game implements ApplicationListener {
     private void draw() {
       
         _shapeRenderer.setProjectionMatrix(cam.combined);
+       System.out.println(world.values().size());
         for (Entity entity : world.values()) {
             
             Asset a = entity.getAsset();
@@ -118,11 +117,12 @@ public class Game implements ApplicationListener {
             if(_assetManager.isLoaded(a.getPath())){
                 sb.begin();
                 if(entity.getType() == EntityType.PLAYER){
-                 
-                 
+
                 _shapeRenderer.begin(ShapeType.Line);
                 _shapeRenderer.setColor(Color.RED);
                 _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
+                
+                
                 
                 }else{
                 _shapeRenderer.begin(ShapeType.Line);
@@ -133,6 +133,7 @@ public class Game implements ApplicationListener {
                 
                 
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
+                
                 Sprite s = new Sprite(t);
                 s.setSize(entity.getSize(),entity.getSize());
                 //s.setCenter(entity.getX(), entity.getY());
@@ -145,6 +146,7 @@ public class Game implements ApplicationListener {
                 _shapeRenderer.end();
             }
         }
+       
 
     }
 
@@ -172,10 +174,22 @@ public class Game implements ApplicationListener {
     private final LookupListener lookupListener = new LookupListener() {
         @Override
         public void resultChanged(LookupEvent le) {
-            for (IGamePluginService updatedGamePlugin : lookup.lookupAll(IGamePluginService.class)) {
-                if (!gamePlugins.contains(updatedGamePlugin)) {
-                    updatedGamePlugin.start(gameData, world);
-                    gamePlugins.add(updatedGamePlugin);
+            
+            Collection <? extends IGamePluginService> updated = result.allInstances();
+            
+            for (IGamePluginService us : updated) {
+                // Newly installed modules
+                if (!gamePlugins.contains(us)) {
+                    us.start(gameData, world);
+                    gamePlugins.add(us);
+                }
+            }
+
+            // Stop and remove module
+            for (IGamePluginService gs : gamePlugins) {
+                if (!updated.contains(gs)) {
+                    gs.stop(gameData);
+                    gamePlugins.remove(gs);
                 }
             }
         }

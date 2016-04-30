@@ -16,5 +16,5 @@ import java.util.Map;
 public interface IGamePluginService {
     void start(GameData gameData, Map<String, Entity> world);
 
-    void stop(GameData gameData);
+    void stop(GameData gamedata);
 }
