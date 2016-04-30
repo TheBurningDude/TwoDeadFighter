@@ -65,6 +65,7 @@
         <module>Map</module>
     <module>PlayerOSGI</module>
         <module>Launcher</module>
+        <module>Weapon</module>
     </modules>
 
     <properties>

@@ -174,9 +174,5 @@ public final class Entity implements Serializable {
     public void setAsset(Asset a){
         this.asset = a;
     }
-    
-    
- 
-    
 
 }
