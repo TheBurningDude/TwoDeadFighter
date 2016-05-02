@@ -53,8 +53,17 @@ public class CollisionProcessingService implements IEntityProcessingService{
                             handl.setY(first.getY());
                         
                         }else if (ent.getType() == EntityType.ENEMY){
+<<<<<<< HEAD
                         
                             //TO-DO
+=======
+                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                            EntityPosition first = collisionCirRect(handled, ent);
+                            EntityPosition handl = handled.getEntityPosition();
+                            handl.setX(first.getX());
+                            handl.setY(first.getY());
+
+>>>>>>> origin/master
                         }
                     
                     }else if (handled.getType() == EntityType.MAP){

@@ -66,6 +66,7 @@
     <module>PlayerOSGI</module>
         <module>Launcher</module>
         <module>Weapon</module>
+        <module>Enemy</module>
     </modules>
 
     <properties>
