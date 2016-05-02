@@ -1,6 +1,7 @@
 package dk.four.group.player;
 
 import dk.four.group.common.data.Entity;
+import dk.four.group.common.data.EntityType;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
 import static dk.four.group.common.data.GameKeys.DOWN;
@@ -12,16 +13,12 @@ import dk.four.group.common.events.Event;
 import dk.four.group.common.events.EventType;
 import dk.four.group.common.services.IEntityProcessingService;
 
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-import static java.lang.Math.sqrt;
 import java.util.ArrayList;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
 
 @ServiceProvider(service = IEntityProcessingService.class)
 public class PlayerControlSystem implements IEntityProcessingService {
-
     final int MAX_BULLETS = 4;
     ArrayList<Bullet> bullets;
 

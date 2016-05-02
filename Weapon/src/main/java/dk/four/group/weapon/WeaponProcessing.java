@@ -5,12 +5,15 @@
  */
 package dk.four.group.weapon;
 
-import com.badlogic.gdx.math.MathUtils;
+
 import dk.four.group.common.data.Entity;
-import static dk.four.group.common.data.EntityType.PLAYER;
-import static dk.four.group.common.data.EntityType.WEAPON;
+import dk.four.group.common.data.EntityBody;
+import dk.four.group.common.data.EntityType;
+
 import dk.four.group.common.data.GameData;
-import static dk.four.group.common.data.GameKeys.SPACE;
+import dk.four.group.common.data.GameKeys;
+import dk.four.group.common.data.ResourceManager;
+
 import dk.four.group.common.services.IEntityProcessingService;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
@@ -22,98 +25,47 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service = IEntityProcessingService.class)
 public class WeaponProcessing implements IEntityProcessingService{
     
-    //Declarity services
-    private float lifeTime;
-    private float lifeTimer;
-    private boolean remove;
+    long lastPress = 0;
+    boolean green = true;
 
-    int i = 0;
-
+    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/bulletBeige.png";
+    private static final String FILE_PATH2 = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep_1.png";
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
-        float x = entity.getEntityPosition().getX();
-        float y = entity.getEntityPosition().getY();
-        float radians = entity.getRadians();
-        float width = entity.getSize();
-        float height = entity.getSize();
-        float dx = entity.getDx();
-        float dy = entity.getDy();
-        float speed = 350;
-        int i = 0;
-
-        if (entity.getType().equals(PLAYER) && gameData.getKeys().isDown(SPACE)) {
-
-            Entity bullet = new Entity();
-            bullet.setType(WEAPON);
-            bullet.getEntityPosition().setX(entity.getEntityPosition().getX());  
-            bullet.getEntityPosition().setY(entity.getEntityPosition().getY());
-            bullet.setMaxSpeed(speed);
-            //width = height = 2;
-            bullet(gameData, bullet);
-            wrap(gameData, bullet);
-            
-            
-            setShape(bullet);
-            world.put(bullet.getID(), bullet);
+        
+        for(Entity e1 : world.values()){
+            for(Entity e2 : world.values())
+            if(e1.getType().equals(EntityType.PLAYER) && e2.getType().equals(EntityType.WEAPON)){
+                ResourceManager.createAssest(FILE_PATH2);
+                e1.setAsset(ResourceManager.getAsset(FILE_PATH2));
+                e2.setEntityPosition(e1.getEntityPosition().getX(), e1.getEntityPosition().getY());
+                e2.setRadians(e1.getRadians());
+                green = (System.currentTimeMillis() - lastPress) > 1500;
+                
+                if(gameData.getKeys().isDown(GameKeys.SPACE)){
+                    //System.out.println("dk.four.group.weapon.WeaponProcessing.process()");
+                    if(green){
+                        ResourceManager.createAssest(FILE_PATH);
+                        Entity bullet = new Entity();
+                        bullet.setEntityPosition(e2.getEntityPosition().getX(), e2.getEntityPosition().getY());
+                        bullet.setDx((float) Math.cos(Math.toRadians(e1.getRadians())));
+                        bullet.setDy((float) Math.sin(Math.toRadians(e1.getRadians())));
+                        bullet.setAsset(ResourceManager.getAsset(FILE_PATH));
+                        bullet.setRadians(e2.getRadians());
+                        bullet.setSize(12);
+                        bullet.setType(EntityType.BULLET);
+                        //bullet.setEntityBody(new EntityBody(12, 12, EntityBody.CollisionShape.RECTANGLE));
+                        bullet.setMaxSpeed(1);
+                        world.put(bullet.getID(), bullet);
+                    
+                    lastPress = System.currentTimeMillis();
+                    }
+                }
+            }
+        
+        
         }
+        
     }
-
-    private void bullet(GameData gameData, Entity entity) {
-        System.out.println("hey iiiiiiiiiiiiii");
-
-    }
-
-    private void setShape(Entity entity) {
-        float x = entity.getEntityPosition().getX();
-        float y = entity.getEntityPosition().getY();
-        float[] shapex = entity.getShapeX();
-        float[] shapey = entity.getShapeY();
-        float radians = entity.getRadians();
-
-        shapex[0] = x + MathUtils.cos(radians) * 8;
-        shapey[0] = y + MathUtils.sin(radians) * 8;
-
-        shapex[1] = x + MathUtils.cos(radians - 4 * 3.1415f / 5) * 8;
-        shapey[1] = y + MathUtils.sin(radians - 4 * 3.1415f / 5) * 8;
-
-        shapex[2] = x + MathUtils.cos(radians + 3.1415f) * 5;
-        shapey[2] = y + MathUtils.sin(radians + 3.1415f) * 5;
-
-        shapex[3] = x + MathUtils.cos(radians + 4 * 3.1415f / 5) * 8;
-        shapey[3] = y + MathUtils.sin(radians + 4 * 3.1415f / 5) * 8;
-
-        entity.setShapeX(shapex);
-        entity.setShapeY(shapey);
-    }
-
-    private void wrap(GameData gameData, Entity entity) {
-        float x = entity.getEntityPosition().getX();
-        float y = entity.getEntityPosition().getY();
-        float dt = gameData.getDelta();
-        float dx = entity.getDx();
-        float dy = entity.getDy();
-
-        // Screen wrap
-        x += dx * dt;
-        if (x > gameData.getDisplayWidth()) {
-            x = 0;
-        } else if (x < 0) {
-            x = gameData.getDisplayWidth();
-        }
-
-        y += dy * dt;
-        if (y > gameData.getDisplayHeight()) {
-            y = 0;
-        } else if (y < 0) {
-            y = gameData.getDisplayHeight();
-        }
-        entity.setDx(dx);
-        entity.setDy(dy);
-        entity.setEntityPosition(x, y);
-
-    }
-
-    private boolean shouldRemove() {
-        return remove;
-    }
+   
 }

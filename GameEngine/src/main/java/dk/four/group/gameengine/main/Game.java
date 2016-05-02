@@ -51,7 +51,7 @@ public class Game implements ApplicationListener {
     private ShapeRenderer _shapeRenderer;
     private AssetManager _assetManager;
     private SpriteBatch sb;
- 
+
    
     @Override
     public void create() {
@@ -98,6 +98,7 @@ public class Game implements ApplicationListener {
 
     private void update() {
         // Update
+        
         for (IEntityProcessingService entityProcessorService : getEntityProcessingServices()) {
             for (Entity e : world.values()) {
                 entityProcessorService.process(gameData, world, e);
@@ -107,42 +108,61 @@ public class Game implements ApplicationListener {
     }
 
     private void draw() {
-      
+            
         _shapeRenderer.setProjectionMatrix(cam.combined);
-       System.out.println(world.values().size());
+       //System.out.println(world.values().size());
         for (Entity entity : world.values()) {
             
             Asset a = entity.getAsset();
             
             if(_assetManager.isLoaded(a.getPath())){
+                
                 sb.begin();
-                if(entity.getType() == EntityType.PLAYER){
-
-                _shapeRenderer.begin(ShapeType.Line);
-                _shapeRenderer.setColor(Color.RED);
-                _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
-                
-                
-                
-                }else{
-                _shapeRenderer.begin(ShapeType.Line);
-                _shapeRenderer.setColor(Color.RED);
-                _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY() , entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
-                
-                }
-                
-                
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
-                
                 Sprite s = new Sprite(t);
-                s.setSize(entity.getSize(),entity.getSize());
-                //s.setCenter(entity.getX(), entity.getY());
-                s.setRotation(entity.getRadians());
-                s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
-                //sb.draw(t, entity.getX(), entity.getY());
-                s.draw(sb);
+                
+                
+                if(null != entity.getType())switch (entity.getType()) {
+                    case PLAYER:
+                        _shapeRenderer.begin(ShapeType.Line);
+                        _shapeRenderer.setColor(Color.RED);
+                        _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
+                        s.setSize(entity.getSize(),entity.getSize());
+                        s.setRotation(entity.getRadians());
+                        s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
+                        //System.out.println(entity.getRadians());
+                        break;
+                    case MAP:
+                        _shapeRenderer.begin(ShapeType.Line);
+                        _shapeRenderer.setColor(Color.RED);
+                        _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY() , entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
+                        s.setSize(entity.getSize(),entity.getSize());
+                        s.setRotation(entity.getRadians());
+                        s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
+                  
+                        break;
+                    case BULLET:
+                        s.setSize(entity.getSize(),entity.getSize());
+                        s.setRotation(entity.getRadians() - 90);
+                        //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
+                        //System.out.println(newY);
+                        float x = entity.getEntityPosition().getX() + (entity.getDx() * entity.getSize()) * (20 * gameData.getDelta());
+                        float y = entity.getEntityPosition().getY() + (entity.getDy() * entity.getSize()) * ( 20 * gameData.getDelta());
+                        System.out.println(entity.getDx() + " ----------------------" + y);
+                        //x = x + entity.getDx() * (200 * gameData.getDelta());
+                        //y = y + entity.getDy() * ( 200 * gameData.getDelta());         
+                        entity.getEntityPosition().setX(x);
+                        entity.getEntityPosition().setY(y);
+                        s.setPosition(entity.getEntityPosition().getX(),entity.getEntityPosition().getY());      
+                    
+                        break;
+                    default:
+                        break;
+                }
+                    s.draw(sb);
 
                 sb.end();
+          
                 _shapeRenderer.end();
             }
         }
@@ -208,4 +228,6 @@ public class Game implements ApplicationListener {
         //s2 = new Sprite(ResourceManager.manager.get(ResourceManager.player_location, Texture.class));
 
     }
+    
+    
 }

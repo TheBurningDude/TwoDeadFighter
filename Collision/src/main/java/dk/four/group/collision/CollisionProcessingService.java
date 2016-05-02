@@ -23,21 +23,30 @@ public class CollisionProcessingService implements IEntityProcessingService{
 
    @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
-        
+        /*
+        *creating a collection of entities that a in world
+        */
         Collection<Entity> entities = world.values();
         
-        //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
         for (Entity handled : entities)
-        {
-           
+        { 
             for (Entity ent : entities)
             {
+                /*
+                * inner for loop for comparing different entities with each other
+                */
                 if(isOverLappingCircleRect(handled, ent)){
+                    /*
+                    *if stat checking if a circle collider is overlapping a rectangle collider
+                    */
                     
                     if(handled.getType() == EntityType.PLAYER){
                         
                         if(ent.getType() == EntityType.MAP){
-                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                            /*
+                            *handling collision for player with map
+                            */
+                            
                             EntityPosition first = collisionCirRect(handled, ent);
                             EntityPosition handl = handled.getEntityPosition();
                             handl.setX(first.getX());
@@ -45,12 +54,14 @@ public class CollisionProcessingService implements IEntityProcessingService{
                         
                         }else if (ent.getType() == EntityType.ENEMY){
                         
-                       
+                            //TO-DO
                         }
                     
                     }else if (handled.getType() == EntityType.MAP){
                         if(ent.getType() == EntityType.PLAYER){
-                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                            /*
+                            *handling collision for map with player
+                            */
                             EntityPosition first = collisionCirRect(ent, handled);
                             EntityPosition handl = ent.getEntityPosition();
                             handl.setX(first.getX());
@@ -58,7 +69,7 @@ public class CollisionProcessingService implements IEntityProcessingService{
                         
                         }else if (ent.getType() == EntityType.ENEMY){
                         
-                        
+                            //TO-DO
                         }
                     
                     
@@ -69,9 +80,10 @@ public class CollisionProcessingService implements IEntityProcessingService{
         }
         
     }
-    
+    //needs to be refactored
     private boolean isOverLappingCircleRect( Entity e1, Entity e2){
         
+       //http://www.java-gaming.org/index.php?topic=31989.0
         
         float circleDistanceX = Math.abs((e2.getEntityPosition().getX() + (e2.getSize() /2)) -(e1.getEntityPosition().getX() + (e1.getSize()/2)) );
         float circleDistanceY = Math.abs((e2.getEntityPosition().getY() + e2.getSize() /2) -(e1.getEntityPosition().getY() + (e1.getSize() /2)) );
@@ -102,7 +114,7 @@ public class CollisionProcessingService implements IEntityProcessingService{
         return (cornerDistanceSq < e1.getRadius());
         
     }
-    
+    //needs to be refactored
     private EntityPosition collisionCirRect(Entity e1, Entity e2){
         
         float e1CenterX = e1.getEntityPosition().getX() + (e1.getSize() /2);
@@ -117,10 +129,12 @@ public class CollisionProcessingService implements IEntityProcessingService{
             
             if (e1CenterY < e2CenterY) 
             {
+                System.out.println(" circle y < rect y");
                 return new EntityPosition(e1.getEntityPosition().getX(), e2.getEntityPosition().getY() - e1.getSize());
             }
             else 
             {
+                System.out.println(" circle y > rect y");
                 return new EntityPosition(e1.getEntityPosition().getX(), e2.getEntityPosition().getY() + e2.getSize());
             }
         
@@ -150,11 +164,19 @@ public class CollisionProcessingService implements IEntityProcessingService{
         {
             if (e1CenterY > e2.getEntityPosition().getY()) 
             {
-                cornerY += e2.getSize(); // We know the corner is on the buttom.
+                cornerY += e2.getSize(); 
             }
         }
         
         EntityPosition distt = new EntityPosition(e1CenterX - cornerX, e1CenterY - cornerY);
+        
+        double gm = (Math.pow(distt.getX(),2) + Math.pow(distt.getY(),2));
+        float nx = (float) (distt.getX() / gm);
+        float ny = (float) (distt.getY() / gm);
+        nx *= e2.getSize()/2;
+        ny *= e2.getSize()/2;
+        distt.setX(nx);
+        distt.setY(ny);
         
         return new EntityPosition(cornerX + distt.getX() - (e2.getSize() /2) , cornerY + distt.getY() - (e2.getSize() / 2));
         

@@ -16,7 +16,7 @@ import org.openide.util.lookup.ServiceProvider;
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class EntityPlugin implements IGamePluginService {
-    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/Wep.png";
+    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/player.png";
     private Map<String, Entity> world;
     private Entity player;
     

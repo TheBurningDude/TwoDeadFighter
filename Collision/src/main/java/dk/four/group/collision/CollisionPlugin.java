@@ -28,10 +28,7 @@ public class CollisionPlugin implements IGamePluginService{
         
         this.world = world;
         this.processor = new CollisionProcessingService();
-        
-        for(Entity e : world.values()){
-            
-        }
+         
     }
 
     @Override

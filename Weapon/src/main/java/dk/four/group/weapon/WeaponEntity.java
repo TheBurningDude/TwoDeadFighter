@@ -6,8 +6,10 @@
 package dk.four.group.weapon;
 
 import dk.four.group.common.data.Entity;
-import static dk.four.group.common.data.EntityType.WEAPON;
+import dk.four.group.common.data.EntityBody;
+import dk.four.group.common.data.EntityType;
 import dk.four.group.common.data.GameData;
+import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IGamePluginService;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
@@ -19,14 +21,13 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider (service = IGamePluginService.class)
 public class WeaponEntity implements IGamePluginService{
     
+    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep.png";
     private Map<String, Entity> world;
     private Entity weapon;
 
-    public WeaponEntity() {
-    }
-
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
+        ResourceManager.createAssest(FILE_PATH);
         this.world = world;
         // Add entities to the world
         weapon = createWeapon(gameData);
@@ -34,11 +35,14 @@ public class WeaponEntity implements IGamePluginService{
     }
     
     private Entity createWeapon(GameData gameData) {
+        
         Entity weaponEnt = new Entity();
-        weaponEnt.setType(WEAPON);
-
-        weaponEnt.setShapeX(new float[4]);
-        weaponEnt.setShapeY(new float[4]);
+        weaponEnt.setType(EntityType.WEAPON);    
+        //weaponEnt.setMaxSpeed(100);
+        //weaponEnt.setEntityPosition(0, 0);
+        weaponEnt.setAsset(ResourceManager.getAsset(FILE_PATH));
+        //weaponEnt.setLife(1);
+        weaponEnt.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.RECTANGLE));
         
         return weaponEnt;
     }
