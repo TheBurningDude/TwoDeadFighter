@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Sidon K. K
  */
 public class ResourceManager {
-    private static Map<String, Asset> assets = new ConcurrentHashMap<>();
+    private static final Map<String, Asset> assets = new ConcurrentHashMap<>();
     
     public static Collection<Asset> asset()
     {
@@ -22,7 +22,7 @@ public class ResourceManager {
     }
     
     public static void createAssest(String path){
-        Asset a = null;
+        Asset a;
         a = new Asset(path);
         assets.put(path, a);
     }

@@ -21,13 +21,11 @@ import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import dk.four.group.common.data.Entity;
-import dk.four.group.common.data.EntityType;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IEntityProcessingService;
 import dk.four.group.common.services.IGamePluginService;
 import dk.four.group.gameengine.managers.GameInputProcessor;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +39,7 @@ import org.openide.util.Lookup.Item;
  */
 public class Game implements ApplicationListener {
 
-   private static OrthographicCamera cam;
+    private static OrthographicCamera cam;
     private final Lookup lookup = Lookup.getDefault();
     private final GameData gameData = new GameData(); 
     private Map<String, Entity> world = new ConcurrentHashMap<>();
@@ -51,8 +49,8 @@ public class Game implements ApplicationListener {
     private ShapeRenderer _shapeRenderer;
     private AssetManager _assetManager;
     private SpriteBatch sb;
-
-   
+    private float x;
+    private float y;
     @Override
     public void create() {
 
@@ -118,24 +116,42 @@ public class Game implements ApplicationListener {
             if(_assetManager.isLoaded(a.getPath())){
                 
                 sb.begin();
+                
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
                 Sprite s = new Sprite(t);
                 
                 
                 if(null != entity.getType())switch (entity.getType()) {
+                    
                     case PLAYER:
                         _shapeRenderer.begin(ShapeType.Line);
                         _shapeRenderer.setColor(Color.RED);
                         _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
-                        s.setSize(entity.getSize(),entity.getSize());
+                        _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY(), entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
+                        x = entity.getEntityPosition().getX();
+                        y = entity.getEntityPosition().getY();
+                        s.setSize(s.getWidth(),s.getHeight());
+                        //s.setRotation(entity.getRadians());
+                        s.setOrigin(32, 32);
                         s.setRotation(entity.getRadians());
+                        
                         s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
                         //System.out.println(entity.getRadians());
                         break;
+                        case WEAPON:
+                            s.setRotation(entity.getRadians());
+                            s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
+                        
+                        break;
                     case MAP:
                         _shapeRenderer.begin(ShapeType.Line);
-                        _shapeRenderer.setColor(Color.RED);
-                        _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY() , entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
+                        _shapeRenderer.setColor(Color.BLUE);
+                        for(int i = 0; i < 15; i++ ){
+                            for(int j = 0; j < 15; j++){
+                                _shapeRenderer.rect(i * 64, j * 64, 64, 64);
+                            }
+
+                        }
                         s.setSize(entity.getSize(),entity.getSize());
                         s.setRotation(entity.getRadians());
                         s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
@@ -146,19 +162,31 @@ public class Game implements ApplicationListener {
                         s.setRotation(entity.getRadians() - 90);
                         //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
                         //System.out.println(newY);
-                        float x = entity.getEntityPosition().getX() + (entity.getDx() * entity.getSize()) * (20 * gameData.getDelta());
-                        float y = entity.getEntityPosition().getY() + (entity.getDy() * entity.getSize()) * ( 20 * gameData.getDelta());
-                        System.out.println(entity.getDx() + " ----------------------" + y);
-                        //x = x + entity.getDx() * (200 * gameData.getDelta());
-                        //y = y + entity.getDy() * ( 200 * gameData.getDelta());         
-                        entity.getEntityPosition().setX(x);
-                        entity.getEntityPosition().setY(y);
+                        
+                        s.setPosition(entity.getEntityPosition().getX(),entity.getEntityPosition().getY());      
+                    
+                        break;
+                        case ENEMY:
+                        _shapeRenderer.begin(ShapeType.Line);
+                        _shapeRenderer.setColor(Color.RED);
+                        _shapeRenderer.circle(entity.getEntityPosition().getX() + 32, entity.getEntityPosition().getY()+ 32, entity.getRadius());
+                        float angle = (float) Math.atan2(y - entity.getEntityPosition().getY(), x - entity.getEntityPosition().getX());
+                        angle = (float) (angle * (180 / Math.PI));
+                        if(angle < 0)angle= 360 -(-angle);
+                        s.setSize(entity.getSize(),entity.getSize());
+                        s.setRotation(angle);
+                        //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
+                        //System.out.println(newY);
+                        
                         s.setPosition(entity.getEntityPosition().getX(),entity.getEntityPosition().getY());      
                     
                         break;
                     default:
                         break;
+                        
                 }
+
+                   
                     s.draw(sb);
 
                 sb.end();

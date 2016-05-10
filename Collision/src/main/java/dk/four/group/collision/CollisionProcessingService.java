@@ -53,17 +53,17 @@ public class CollisionProcessingService implements IEntityProcessingService{
                             handl.setY(first.getY());
                         
                         }else if (ent.getType() == EntityType.ENEMY){
-<<<<<<< HEAD
+
                         
                             //TO-DO
-=======
+
                             //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
                             EntityPosition first = collisionCirRect(handled, ent);
                             EntityPosition handl = handled.getEntityPosition();
                             handl.setX(first.getX());
                             handl.setY(first.getY());
 
->>>>>>> origin/master
+
                         }
                     
                     }else if (handled.getType() == EntityType.MAP){
@@ -78,7 +78,30 @@ public class CollisionProcessingService implements IEntityProcessingService{
                         
                         }else if (ent.getType() == EntityType.ENEMY){
                         
-                            //TO-DO
+                            EntityPosition first = collisionCirRect(ent, handled);
+                            EntityPosition handl = ent.getEntityPosition();
+                            handl.setX(first.getX());
+                            handl.setY(first.getY());
+                        }
+                    
+                    
+                    }else if (handled.getType() == EntityType.ENEMY){
+                        if(ent.getType() == EntityType.MAP){
+                            /*
+                            *handling collision for map with player
+                            */
+                            System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                            EntityPosition first = collisionCirRect(handled, ent);
+                            EntityPosition handl = handled.getEntityPosition();
+                            handl.setX(first.getX());
+                            handl.setY(first.getY());
+                        
+                        }else if (ent.getType() == EntityType.PLAYER){
+                        
+                            EntityPosition first = collisionCirRect(ent, handled);
+                            EntityPosition handl = ent.getEntityPosition();
+                            handl.setX(first.getX());
+                            handl.setY(first.getY());
                         }
                     
                     

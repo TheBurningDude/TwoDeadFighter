@@ -21,6 +21,7 @@ public final class Entity implements Serializable {
     private boolean isHit = false;
     private float expiration;
     private float size;
+    
     private Asset asset;
     private EntityBody body;
     private EntityPosition eP;

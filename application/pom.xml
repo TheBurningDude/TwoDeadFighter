@@ -74,38 +74,38 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-<<<<<<< HEAD
+
             <artifactId>Player</artifactId>
-=======
-            <artifactId>Enemy</artifactId>
->>>>>>> origin/master
+
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-<<<<<<< HEAD
+
+            <artifactId>Collision</artifactId>
+  
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+
+            <artifactId>Map</artifactId>
+
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>Weapon</artifactId>
-=======
-            <artifactId>Player</artifactId>
->>>>>>> origin/master
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-<<<<<<< HEAD
-            <artifactId>Collision</artifactId>
-=======
-            <artifactId>Map</artifactId>
->>>>>>> origin/master
+            <artifactId>AI</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-<<<<<<< HEAD
-            <artifactId>Map</artifactId>
-=======
-            <artifactId>Collision</artifactId>
->>>>>>> origin/master
+            <artifactId>Enemy</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

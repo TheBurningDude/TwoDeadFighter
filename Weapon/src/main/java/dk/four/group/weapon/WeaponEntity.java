@@ -21,7 +21,7 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider (service = IGamePluginService.class)
 public class WeaponEntity implements IGamePluginService{
     
-    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep.png";
+    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep1_1.png";
     private Map<String, Entity> world;
     private Entity weapon;
 
@@ -30,19 +30,18 @@ public class WeaponEntity implements IGamePluginService{
         ResourceManager.createAssest(FILE_PATH);
         this.world = world;
         // Add entities to the world
-        weapon = createWeapon(gameData);
+        weapon = createWeapon();
         world.put(weapon.getID(), weapon);
     }
     
-    private Entity createWeapon(GameData gameData) {
+    private Entity createWeapon() {
         
         Entity weaponEnt = new Entity();
-        weaponEnt.setType(EntityType.WEAPON);    
-        //weaponEnt.setMaxSpeed(100);
-        //weaponEnt.setEntityPosition(0, 0);
+        weaponEnt.setType(EntityType.WEAPON);
         weaponEnt.setAsset(ResourceManager.getAsset(FILE_PATH));
-        //weaponEnt.setLife(1);
-        weaponEnt.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.RECTANGLE));
+        weaponEnt.setEntityPosition(0, 0);
+        weaponEnt.setRadians(0);
+        weaponEnt.setEntityBody(new EntityBody( 32   , 14, EntityBody.CollisionShape.RECTANGLE));
         
         return weaponEnt;
     }

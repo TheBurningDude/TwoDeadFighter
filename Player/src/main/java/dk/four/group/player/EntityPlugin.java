@@ -16,27 +16,25 @@ import org.openide.util.lookup.ServiceProvider;
  */
 @ServiceProvider(service = IGamePluginService.class)
 public class EntityPlugin implements IGamePluginService {
-    private static final String FILE_PATH = "../../../Player/src/main/java/dk/four/group/player/data/player.png";
+    
+    private static final String PLAYER_IMG = "../../../Player/src/main/java/dk/four/group/player/data/player.png";
+    
     private Map<String, Entity> world;
     private Entity player;
     
-    public EntityPlugin() {
-    }
-
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
         
-       ResourceManager.createAssest(FILE_PATH);
+       ResourceManager.createAssest(PLAYER_IMG);
         this.world = world;
         // Add entities to the world
         player = createPlayer(gameData);
-        world.put(player.getID(), player);
-        
-     
+        world.put(player.getID(), player); 
         
     }
 
     private Entity createPlayer(GameData gameData) {
+        
         Entity playerP = new Entity();
         playerP.setType(PLAYER);
         
@@ -48,16 +46,12 @@ public class EntityPlugin implements IGamePluginService {
         playerP.setSize(64);
         playerP.setRadius(64/2);
         
-        //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
-
-        playerP.setRadians(3.1415f / 2);
+        playerP.setRadians(0);
         playerP.setRotationSpeed(5);
-        playerP.setAsset(ResourceManager.getAsset(FILE_PATH));
-        playerP.setLife(1);
+        playerP.setAsset(ResourceManager.getAsset(PLAYER_IMG));
+        playerP.setLife(3);
         playerP.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.CIRCLE));
         
-        //playerP.setRadius(32/2);
-
         return playerP;
     }
 
@@ -65,8 +59,7 @@ public class EntityPlugin implements IGamePluginService {
     public void stop(GameData gamedata) {
         // Remove entities
         world.remove(player.getID());
-        
-        
+
     }
 
 }

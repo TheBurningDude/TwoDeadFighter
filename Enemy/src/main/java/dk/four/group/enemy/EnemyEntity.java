@@ -23,7 +23,7 @@ public class EnemyEntity implements IGamePluginService {
 
     private static final String FILE_PATH = "../../../Enemy/src/main/java/dk/four/group/enemy/data/dead.png";
     private Map<String, Entity> world;
-    private Entity enemy;
+    private Entity enemy,entity2;
     
     public EnemyEntity() {
     }
@@ -34,6 +34,8 @@ public class EnemyEntity implements IGamePluginService {
         this.world = world;
         // Add entities to the world
         enemy = createEnemy(gameData);
+        //entity2 = createEnemy(gameData);
+        //world.put(entity2.getID(), entity2);
         world.put(enemy.getID(), enemy);
     }
     
@@ -43,12 +45,12 @@ public class EnemyEntity implements IGamePluginService {
         
         enemyEnt.setEntityPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 4);
 
-        enemyEnt.setMaxSpeed(300);
+        enemyEnt.setMaxSpeed(100);
         enemyEnt.setAcceleration(200);
         enemyEnt.setDeacceleration(10);
         enemyEnt.setSize(64);
         enemyEnt.setRadius(64/2);
-        
+        enemyEnt.setEntityPosition(0, 0);
         //playerShip.setSprite(new Texture(this.getClass().getClassLoader().getResource("data/playertext.png").toExternalForm()));
 
         enemyEnt.setRadians(3.1415f / 2);

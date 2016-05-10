@@ -11,8 +11,8 @@ package dk.four.group.common.data;
  */
 public class GameAssets {
     
-    private String fileName;
-    private String path;
+    private final String fileName;
+    private final String path;
 
     public GameAssets(String fileName, String path) {
         this.fileName = fileName;

@@ -1,7 +1,6 @@
 package dk.four.group.player;
 
 import dk.four.group.common.data.Entity;
-import dk.four.group.common.data.EntityType;
 import static dk.four.group.common.data.EntityType.PLAYER;
 import dk.four.group.common.data.GameData;
 import static dk.four.group.common.data.GameKeys.DOWN;
@@ -13,17 +12,15 @@ import dk.four.group.common.events.Event;
 import dk.four.group.common.events.EventType;
 import dk.four.group.common.services.IEntityProcessingService;
 
-import java.util.ArrayList;
 import java.util.Map;
 import org.openide.util.lookup.ServiceProvider;
 
 @ServiceProvider(service = IEntityProcessingService.class)
 public class PlayerControlSystem implements IEntityProcessingService {
-    final int MAX_BULLETS = 4;
-    ArrayList<Bullet> bullets;
-
+    
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
+        
         float x = entity.getEntityPosition().getX();
         float y = entity.getEntityPosition().getY();
         float dt = gameData.getDelta();
@@ -85,14 +82,14 @@ public class PlayerControlSystem implements IEntityProcessingService {
             // set position
             x += dx * dt;
             if (x > gameData.getDisplayWidth()) {
-                x = gameData.getDisplayWidth()- 32;
+                x = gameData.getDisplayWidth();
             } else if (x < 0) {
                 x = 0;
             }
 
             y += dy * dt;
             if (y > gameData.getDisplayHeight()) {
-                y = gameData.getDisplayHeight() - 32;
+                y = gameData.getDisplayHeight();
             } else if (y < 0) {
                 y = 0;
             }
@@ -129,18 +126,6 @@ public class PlayerControlSystem implements IEntityProcessingService {
         entity.setShapeY(shapey);
     }
 
-    public void shoot(Entity entity, GameData gameData) {
-
-        float radians = entity.getRadians();
-        float x = entity.getEntityPosition().getX();
-        float y = entity.getEntityPosition().getY();
-
-        this.bullets = bullets;
-        if (bullets.size() == MAX_BULLETS) {
-            return;
-        }
-
-        bullets.add(new Bullet(x, y, radians));
-    }
+    
 
 }
