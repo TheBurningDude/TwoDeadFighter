@@ -27,16 +27,21 @@ public class WeaponProcessing implements IEntityProcessingService{
     long lastPress = 0;
     boolean canShoot = true;
     private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/bulletBeige.png";
-    //private static final String FILE_PATH2 = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep_1.png";
+    
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         
         for(Entity e1 : world.values()){
             for(Entity e2 : world.values())
             if(e1.getType().equals(EntityType.PLAYER) && e2.getType().equals(EntityType.WEAPON)){
-                        e2.setEntityPosition(e1.getEntityPosition().getX(), e1.getEntityPosition().getY());
+                        float playerCenterX = e1.getEntityPosition().getX();
+                        float playerCenterY = e1.getEntityPosition().getY();
+
+                        
+                        e2.setEntityPosition(playerCenterX , playerCenterY);
                         //e1.setRadians(i++);
                         e2.setRadians(e1.getRadians());
+                        
                         
                 canShoot = (System.currentTimeMillis() - lastPress) > 100;
                 
@@ -52,14 +57,15 @@ public class WeaponProcessing implements IEntityProcessingService{
                         bullet.setSize(12);
                         bullet.setType(EntityType.BULLET);
                         
-                        float x = e1.getEntityPosition().getX();
-                        float y = e1.getEntityPosition().getY();
+                        float x = e2.getEntityPosition().getX() + e2.getEntityBody().getWidth()/2;
+                        float y = e2.getEntityPosition().getY() + e2.getEntityBody().getWidth()/2 ;
+                        
                         float rad = (float) Math.toRadians(e1.getRadians());
                       
-                        float tipx = (float) (x + 63 * Math.cos(rad) - 0 * Math.sin(rad));
-                        float tipy = (float) (y + 63 * Math.sin(rad) + 0 * Math.cos(rad));
+                        float tipx = (float) (x + (35 * Math.cos(rad)) - (-20 * Math.sin(rad)));
+                        float tipy = (float) (y + (35 * Math.sin(rad)) + (-20 * Math.cos(rad)));
   
-                        bullet.setEntityPosition(tipx, tipy);
+                        bullet.setEntityPosition(tipx,tipy);
                         //bullet.setEntityBody(new EntityBody(12, 12, EntityBody.CollisionShape.RECTANGLE));
                         bullet.setMaxSpeed(1);
                         world.put(bullet.getID(), bullet);
@@ -79,15 +85,35 @@ public class WeaponProcessing implements IEntityProcessingService{
                         //y = y + entity.getDy() * ( 200 * gameData.getDelta());         
                         entity.getEntityPosition().setX(x);
                         entity.getEntityPosition().setY(y);
+                        destroyOnLeaveScreen(gameData, world, entity);
+                        
+                        
         
         }
         
     }
     
-    
-    private void shoot(Entity e){
-    
-    
+     private void destroyOnLeaveScreen(GameData gameData, Map<String, Entity> world, Entity e) {
+        float x = e.getEntityPosition().getX();
+        float y = e.getEntityPosition().getY();
+        float dx = e.getDx();
+        float dy = e.getDy();
+        float dt = gameData.getDelta();
+        // Screen wrap
+        x += dx * dt;
+        if (x > gameData.getDisplayWidth()) {
+            world.remove(e.getID());
+        } else if (x < 0) {
+            world.remove(e.getID());
+        }
+
+        y += dy * dt;
+        if (y > gameData.getDisplayHeight()) {
+            world.remove(e.getID());
+        } else if (y < 0) {
+            world.remove(e.getID());
+        }
     }
-   
+    
+     
 }

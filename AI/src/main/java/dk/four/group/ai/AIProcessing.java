@@ -45,7 +45,7 @@ public class AIProcessing implements IEntityProcessingService{
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         
             if(pF == null){
-                pF = new PathFinder(gameData.getDisplayWidth(),gameData.getDisplayHeight(),64,64);
+                pF = new PathFinder(gameData.getDisplayWidth()+128,gameData.getDisplayHeight()+128,64,64);
                 //System.out.println("dk.four.group.ai.AIProcessing.process()");
                 }   
 
@@ -81,7 +81,8 @@ public class AIProcessing implements IEntityProcessingService{
                 //System.out.println(magnitude);
                 if(magnitude < 96){
                     if(magnitude <= 64 + (enemyBody.getWidth()/2) + (enemyBody.getHeight()/2)){
-                        //attack
+                        if(player.getLife() > 0)
+                        player.setLife(player.getLife() - 1);
                     }
                     tempX = velocity.getX();
                     tempY = velocity.getY();
@@ -109,7 +110,7 @@ public class AIProcessing implements IEntityProcessingService{
                             MapAI();
                             
                             path = pF.GetPath();
-                            System.out.println("hey");
+                            //System.out.println("hey");
                             i = 0;
                             velocity = new EntityPosition(path.get(i).GetCenterX() - enemyCenter.getX(), path.get(i).GetCenterY() - enemyCenter.getY());
                             lastPathCal = System.currentTimeMillis();

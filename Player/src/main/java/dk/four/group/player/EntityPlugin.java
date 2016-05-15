@@ -25,13 +25,13 @@ public class EntityPlugin implements IGamePluginService {
     @Override
     public void start(GameData gameData, Map<String, Entity> world) {
         
-       ResourceManager.createAssest(PLAYER_IMG);
+        ResourceManager.createAssest(PLAYER_IMG);
         this.world = world;
         // Add entities to the world
         player = createPlayer(gameData);
-        gameData.addPlayer(player);
-        world.put(player.getID(), player); 
         
+        world.put(player.getID(), player); 
+        gameData.addPlayer(player);
     }
 
     private Entity createPlayer(GameData gameData) {
@@ -50,7 +50,7 @@ public class EntityPlugin implements IGamePluginService {
         playerP.setRadians(0);
         playerP.setRotationSpeed(5);
         playerP.setAsset(ResourceManager.getAsset(PLAYER_IMG));
-        playerP.setLife(3);
+        playerP.setLife(100);
         playerP.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.CIRCLE));
         
         return playerP;

@@ -36,75 +36,72 @@ public class CollisionProcessingService implements IEntityProcessingService{
                 * inner for loop for comparing different entities with each other
                 */
                 if(isOverLappingCircleRect(handled, ent)){
-                    /*
-                    *if stat checking if a circle collider is overlapping a rectangle collider
-                    */
-                    
-                    if(handled.getType() == EntityType.PLAYER){
-                        
-                        if(ent.getType() == EntityType.MAP){
-                            /*
-                            *handling collision for player with map
-                            */
-                            
-                            EntityPosition first = collisionCirRect(handled, ent);
-                            EntityPosition handl = handled.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-                        
-                        }else if (ent.getType() == EntityType.ENEMY){
 
-                        
-                            //TO-DO
-
-                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
-                            EntityPosition first = collisionCirRect(handled, ent);
-                            EntityPosition handl = handled.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-
-
-                        }
                     
-                    }else if (handled.getType() == EntityType.MAP){
-                        if(ent.getType() == EntityType.PLAYER){
-                            /*
-                            *handling collision for map with player
-                            */
-                            EntityPosition first = collisionCirRect(ent, handled);
-                            EntityPosition handl = ent.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-                        
-                        }else if (ent.getType() == EntityType.ENEMY){
-                        
-                            EntityPosition first = collisionCirRect(ent, handled);
-                            EntityPosition handl = ent.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-                        }
-                    
-                    
-                    }else if (handled.getType() == EntityType.ENEMY){
-                        if(ent.getType() == EntityType.MAP){
-                            /*
-                            *handling collision for map with player
-                            */
-                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
-                            EntityPosition first = collisionCirRect(handled, ent);
-                            EntityPosition handl = handled.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-                        
-                        }else if (ent.getType() == EntityType.PLAYER){
-                        
-                            EntityPosition first = collisionCirRect(ent, handled);
-                            EntityPosition handl = ent.getEntityPosition();
-                            handl.setX(first.getX());
-                            handl.setY(first.getY());
-                        }
-                    
-                    
+                    if(null != handled.getType()) /*
+                     *if stat checking if a circle collider is overlapping a rectangle collider
+                     */ switch (handled.getType()) {
+                        case PLAYER:
+                            if(ent.getType() == EntityType.MAP){
+                                /*
+                                *handling collision for player with map
+                                */
+                                
+                                EntityPosition first = collisionCirRect(handled, ent);
+                                EntityPosition handl = handled.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                                
+                            }else if (ent.getType() == EntityType.ENEMY){
+                                
+                                
+                                //TO-DO
+                                
+                                //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                                EntityPosition first = collisionCirRect(handled, ent);
+                                EntityPosition handl = handled.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                                
+                                
+                            }   break;
+                        case MAP:
+                            if(ent.getType() == EntityType.PLAYER){
+                                /*
+                                *handling collision for map with player
+                                */
+                                EntityPosition first = collisionCirRect(ent, handled);
+                                EntityPosition handl = ent.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                                
+                            }else if (ent.getType() == EntityType.ENEMY){
+                                
+                                EntityPosition first = collisionCirRect(ent, handled);
+                                EntityPosition handl = ent.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                            }   break;
+                        case ENEMY:
+                            if(ent.getType() == EntityType.MAP){
+                                /*
+                                *handling collision for map with player
+                                */
+                                //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                                EntityPosition first = collisionCirRect(handled, ent);
+                                EntityPosition handl = handled.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                                
+                            }else if (ent.getType() == EntityType.PLAYER){
+                                
+                                EntityPosition first = collisionCirRect(ent, handled);
+                                EntityPosition handl = ent.getEntityPosition();
+                                handl.setX(first.getX());
+                                handl.setY(first.getY());
+                            }   break;
+                        default:
+                            break;
                     }
                 }
                

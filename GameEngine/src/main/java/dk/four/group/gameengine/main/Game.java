@@ -21,6 +21,7 @@ import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import dk.four.group.common.data.Entity;
+import dk.four.group.common.data.EntityType;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IEntityProcessingService;
@@ -112,6 +113,7 @@ public class Game implements ApplicationListener {
         for (Entity entity : world.values()) {
             
             Asset a = entity.getAsset();
+            if(a == null) continue;
             
             if(_assetManager.isLoaded(a.getPath())){
                 
@@ -136,6 +138,8 @@ public class Game implements ApplicationListener {
                         s.setRotation(entity.getRadians());
                         
                         s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
+                        
+                        
                         //System.out.println(entity.getRadians());
                         break;
                         case WEAPON:
@@ -182,14 +186,24 @@ public class Game implements ApplicationListener {
                     
                         break;
                     default:
+                        
                         break;
                         
                 }
+                        
 
                    
                     s.draw(sb);
 
-                sb.end();
+                        sb.end();
+                        
+                        if(entity.getType().equals(EntityType.PLAYER)){
+                            _shapeRenderer.end();
+                        _shapeRenderer.begin(ShapeType.Filled);
+                        _shapeRenderer.setColor(Color.GREEN);
+                        _shapeRenderer.rect(50,gameData.getDisplayHeight()-50, entity.getLife(), 20);
+                        }
+                        
           
                _shapeRenderer.end();
             }

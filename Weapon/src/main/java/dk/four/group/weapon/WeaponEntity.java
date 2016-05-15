@@ -12,6 +12,7 @@ import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.ResourceManager;
 import dk.four.group.common.services.IGamePluginService;
 import java.util.Map;
+import javax.annotation.Resource;
 import org.openide.util.lookup.ServiceProvider;
 
 /**
@@ -21,7 +22,8 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider (service = IGamePluginService.class)
 public class WeaponEntity implements IGamePluginService{
     
-    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep1_1.png";
+    private static final String FILE_PATH = "../../../Weapon/src/main/java/dk/four/group/weapon/data/Wep1.png";
+
     private Map<String, Entity> world;
     private Entity weapon;
 
@@ -30,6 +32,9 @@ public class WeaponEntity implements IGamePluginService{
         ResourceManager.createAssest(FILE_PATH);
         this.world = world;
         // Add entities to the world
+        
+        
+           
         weapon = createWeapon();
         world.put(weapon.getID(), weapon);
     }
@@ -41,7 +46,7 @@ public class WeaponEntity implements IGamePluginService{
         weaponEnt.setAsset(ResourceManager.getAsset(FILE_PATH));
         weaponEnt.setEntityPosition(0, 0);
         weaponEnt.setRadians(0);
-        weaponEnt.setEntityBody(new EntityBody( 32   , 14, EntityBody.CollisionShape.RECTANGLE));
+        weaponEnt.setEntityBody(new EntityBody( 64   , 64, EntityBody.CollisionShape.RECTANGLE));
         
         return weaponEnt;
     }
