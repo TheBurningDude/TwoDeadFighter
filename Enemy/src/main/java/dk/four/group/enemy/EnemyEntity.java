@@ -34,8 +34,9 @@ public class EnemyEntity implements IGamePluginService {
         this.world = world;
         // Add entities to the world
         enemy = createEnemy(gameData);
-        //entity2 = createEnemy(gameData);
-        //world.put(entity2.getID(), entity2);
+        entity2 = createEnemy(gameData);
+        entity2.setEntityPosition(200, 200);
+        world.put(entity2.getID(), entity2);
         world.put(enemy.getID(), enemy);
     }
     
@@ -45,7 +46,7 @@ public class EnemyEntity implements IGamePluginService {
         
         enemyEnt.setEntityPosition(gameData.getDisplayWidth() / 2, gameData.getDisplayHeight() / 4);
 
-        enemyEnt.setMaxSpeed(100);
+        enemyEnt.setMaxSpeed(130);
         enemyEnt.setAcceleration(200);
         enemyEnt.setDeacceleration(10);
         enemyEnt.setSize(64);

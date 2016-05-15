@@ -29,6 +29,7 @@ public class EntityPlugin implements IGamePluginService {
         this.world = world;
         // Add entities to the world
         player = createPlayer(gameData);
+        gameData.addPlayer(player);
         world.put(player.getID(), player); 
         
     }

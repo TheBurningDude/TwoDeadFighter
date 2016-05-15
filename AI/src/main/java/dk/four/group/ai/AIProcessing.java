@@ -6,8 +6,9 @@
 package dk.four.group.ai;
 
 import dk.four.group.common.data.Entity;
-import dk.four.group.common.data.EntityType;
+import dk.four.group.common.data.EntityBody;
 import dk.four.group.common.data.EntityPosition;
+import dk.four.group.common.data.EntityType;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.NodeType;
 import dk.four.group.common.services.IEntityProcessingService;
@@ -23,113 +24,188 @@ import org.openide.util.lookup.ServiceProvider;
 public class AIProcessing implements IEntityProcessingService{
     
     PathFinder pF;
-    int pathFound = 0;
-    float playerCenterX;
-    float playerCenterY;
-    float enemyCenterX;
-    float enemyCenterY;
-    long lastPress = 0;
-    float x;
-    float y;
-    float X;
-    float Y;
-    float nx;
-    float ny;
-    boolean gotpath = true;
+    
+    Entity player;
+    EntityPosition playerPos;
+    EntityPosition playerCenter;
+    EntityBody playerBody;
+    
+    Entity enemy;
+    EntityPosition enemyPos;
+    EntityPosition enemyCenter;
+    EntityBody enemyBody;
+    
+    float tempX;
+    float tempY;
+    
+    float lastPathCal = 0;
+    int i = 0;
+
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
-        long currentTime = System.currentTimeMillis();
-        //System.out.println("dk.four.group.ai.AIProcessing.process()");
-        if(pF == null){
-            pF = new PathFinder(gameData.getDisplayWidth(),gameData.getDisplayHeight(),64,64);
-            //System.out.println("dk.four.group.ai.AIProcessing.process()");
-        }
-        if(entity.getType().equals(EntityType.MAP)){
-                        pF.SetGridNode(192,192 , NodeType.UNPASSABLE);
-                        pF.SetGridNode(192,256 , NodeType.UNPASSABLE);
-                        pF.SetGridNode(256 ,192 , NodeType.UNPASSABLE);
-                        pF.SetGridNode(256 ,256  , NodeType.UNPASSABLE);
-        }
         
-        for(Entity player : world.values()){
-            for(Entity enemy : world.values()){
-                
-                if(enemy.getType().equals(EntityType.ENEMY) && player.getType().equals(EntityType.PLAYER) ){
-                    enemyCenterX = enemy.getEntityPosition().getX() + enemy.getEntityBody().getWidth()/2;
-                    enemyCenterY = enemy.getEntityPosition().getY() + enemy.getEntityBody().getHeight()/2;
-                    EntityPosition dist = new  EntityPosition((player.getEntityPosition().getX() + player.getEntityBody().getWidth()/2) - enemyCenterX, (player.getEntityPosition().getY() + player.getEntityBody().getHeight()/2) - enemyCenterY);
-                    
-                    float gm = (float) Math.sqrt(Math.pow(dist.getX(), 2) + Math.pow(dist.getY(), 2));
-                        pF.SetGridNode((int)enemyCenterX,(int) enemyCenterY, NodeType.START);
-                        pF.SetGridNode((int)player.getEntityPosition().getX() + 32, (int)player.getEntityPosition().getY() + 32, NodeType.END);
-                    //gotpath = (System.currentTimeMillis() - lastPress) > gameData.getDelta();
-                    gotpath = (System.currentTimeMillis() - lastPress) > 1000;
-                    if(gotpath){
-   
-                        if(pF.findPath() == 1){
-                        ArrayList<Node> path = pF.GetPath();
-                    //enemy.setEntityPosition(300, 300);
-                    
-                    //System.out.println(path.size());
-                    if(path != null ){
-                        int i = 0;
-                        //System.out.println(enemy.getEntityPosition().getX());
-                        //playerCenterX = (int) path.get(i).GetCenterX();
-                        //playerCenterrY = (int) path.get(i).GetCenterX();
+            if(pF == null){
+                pF = new PathFinder(gameData.getDisplayWidth(),gameData.getDisplayHeight(),64,64);
+                //System.out.println("dk.four.group.ai.AIProcessing.process()");
+                }   
 
-                        //float dist = (float) Math.sqrt((enemy.getEntityPosition().getX()- path.get(0).getX())*(enemy.getEntityPosition().getX()-path.get(0).getX()) + (enemy.getEntityPosition().getY()-path.get(0).getY()) * (enemy.getEntityPosition().getY()-path.get(0).getY()));
+                player = gameData.getPlayer();
+                playerPos = player.getEntityPosition();
+                playerBody = player.getEntityBody();
+                
+                if (playerPos == null || playerBody == null)
+                {
+                return;
+                }
+                playerCenter = new EntityPosition(playerPos.getX() + playerBody.getWidth()/2, playerPos.getY() + playerBody.getHeight()/2);
+              long currentTime = System.currentTimeMillis();
+        for(Entity e : world.values()){
+            
+ 
+            if (e.getType() != EntityType.ENEMY)
+            {
+                continue;
+            }
+                
+                enemy = e;
+                enemyPos = enemy.getEntityPosition();
+                enemyBody = enemy.getEntityBody();
+                
+                enemyCenter = new EntityPosition(enemyPos.getX() + enemyBody.getWidth()/2, enemyPos.getY() + enemyBody.getHeight()/2);
+                
+                EntityPosition velocity = new EntityPosition(playerCenter.getX() - enemyCenter.getX(), playerCenter.getY() - enemyCenter.getY());
+                float magnitude = (float) Math.sqrt(Math.pow(velocity.getX(), 2) + Math.pow(velocity.getY(), 2));
+                
+                            pF.SetGridNode((int) playerCenter.getX(), (int) playerCenter.getY(), NodeType.END);
+                            pF.SetGridNode((int) enemyCenter.getX(), (int) enemyCenter.getY(), NodeType.START);
+                //System.out.println(magnitude);
+                if(magnitude < 96){
+                    if(magnitude <= 64 + (enemyBody.getWidth()/2) + (enemyBody.getHeight()/2)){
+                        //attack
+                    }
+                    tempX = velocity.getX();
+                    tempY = velocity.getY();
+                    
+                    if(!(tempX == 0 && tempY ==0)){
+                                tempX /= magnitude;
+                                tempY /= magnitude;
+                            }  
+                    
+                    tempX *= enemy.getMaxSpeed();
+                    tempY *= enemy.getMaxSpeed();
+                    
+                    velocity.setX(0);
+                    velocity.setY(0);
+                    
                             
-                           
-                                
+                    
+                }else if(magnitude < 800 && pF.findPath() == 1){
+                    System.out.println((System.currentTimeMillis() - lastPathCal));
+                    //System.out.println(lastPathCal);
+                    ArrayList<Node> path = pF.GetPath();
+                    if(pF.GetPath() == null || (System.currentTimeMillis() - lastPathCal) > 1500 ){
+                        try{
+                            //i = 0;
+                            MapAI();
+                            
+                            path = pF.GetPath();
+                            System.out.println("hey");
+                            i = 0;
+                            velocity = new EntityPosition(path.get(i).GetCenterX() - enemyCenter.getX(), path.get(i).GetCenterY() - enemyCenter.getY());
+                            lastPathCal = System.currentTimeMillis();
+                            
+                            
+                        }catch(Exception exception){
+                            tempX = velocity.getX();
+                            tempY = velocity.getY();
+                            if(!(tempX == 0 && tempY ==0)){
+                                tempX /= magnitude;
+                                tempY /= magnitude;
+                            }    
+                            
+                            tempX *= enemy.getMaxSpeed();
+                            tempY *= enemy.getMaxSpeed();
+
+                            velocity.setX(tempX);
+                            velocity.setY(tempY);
+                        }
+                        
+                        
+                    }
+                    if(pF.GetPath() != null){
+                        i = 0;
+                        //lastPathCal = System.currentTimeMillis();
+                        EntityPosition currentPos = new EntityPosition(path.get(i).GetCenterX() - enemyCenter.getX(), path.get(i).GetCenterY() - enemyCenter.getY());
+                        float currentMagnitude = (float) Math.sqrt(Math.pow(currentPos.getX(), 2) + Math.pow(currentPos.getY(), 2));
+                        if(currentMagnitude < 64){
                             if(path.size() > 1){
                                 i++;
                             }
-                                
-                       
-                                
-                            
-                               
-                                    X = (int) path.get(i).getX();
-                                    Y = (int) path.get(i).getY();
-                                    
-                                 
-                                  //System.out.println(dist);
-                                    
-                                    //enemy.setEntityPosition(x,y);
-                                    
-                                //System.out.println(X);
-                                //X += Math.cos(enemy.getRadians()) * enemy.getMaxSpeed() * gameData.getDelta();
-                               // Y += Math.sin(enemy.getRadians()) * enemy.getMaxSpeed() * gameData.getDelta();
-                               
-                                
-                                    //System.out.println(path.size());
-                                    //enemy.setEntityPosition(X, Y);
-//                                int nx = (int) (X - enemy.getEntityPosition().getX());
-//                                int ny = (int) (Y - enemy.getEntityPosition().getY());
-//
-//                                float norm = (float) Math.sqrt(nx * nx + ny * ny);
-//                                playerCenterX = (int) ((nx/norm) * enemy.getMaxSpeed());
-//                                playerCenterY = (int) ((ny/norm) * enemy.getMaxSpeed());
-//
-//                                x +=  playerCenterX *gameData.getDelta();
-//                                y +=  playerCenterY * gameData.getDelta();
-
-
-                                enemy.setEntityPosition(X, Y);
-                                
-                                lastPress = System.currentTimeMillis();
-                                System.out.println(path.size());
-                            
                         }
-                    }
-                        
-                        //enemy.setEntityPosition(playerCenterX, playerCenterrY);
-                    }
-                    //float dist = (float) Math.sqrt((enemy.getEntityPosition().getX() - X) * (enemy.getEntityPosition().getX() - X) + (enemy.getEntityPosition().getY() - Y) * (enemy.getEntityPosition().getY() - Y) );
-                                
-                }
+                        velocity = new EntityPosition(path.get(i).GetCenterX() - enemyCenter.getX(), path.get(i).GetCenterY() - enemyCenter.getY());
+                        tempX = velocity.getX();
+                        tempY = velocity.getY();
                     
+                         if(!(tempX == 0 && tempY ==0)){
+                                tempX /= magnitude;
+                                tempY /= magnitude;
+                            }  
+                    
+                        tempX *= enemy.getMaxSpeed();
+                        tempY *= enemy.getMaxSpeed();
+                    
+                        velocity.setX(tempX);
+                        velocity.setY(tempY);
+                    }
+                    
+                    
+                }else{
+                        tempX = velocity.getX();
+                        tempY = velocity.getY();
+                    
+                         if(!(tempX == 0 && tempY ==0)){
+                                tempX /= magnitude;
+                                tempY /= magnitude;
+                            }  
+                    
+                        tempX *= 0;
+                        tempY *= 0;
+                    
+                        velocity.setX(tempX);
+                        velocity.setY(tempY);
                 }
-        }
+                
+                enemyPos.setX(enemyPos.getX() + velocity.getX() * gameData.getDelta());
+                enemyPos.setY(enemyPos.getY() + velocity.getY() * gameData.getDelta());
+                //System.out.println(enemyPos.getX() + enemyPos.getY());
+                //set postion here
+            }
+            
+        
+        
+        
+    }
+    
+    private void MapAI(){
+        pF.SetGridNode(192,192 , NodeType.UNPASSABLE);
+        pF.SetGridNode(192,256 , NodeType.UNPASSABLE);
+        pF.SetGridNode(256 ,192 , NodeType.UNPASSABLE);
+        pF.SetGridNode(256 ,256  , NodeType.UNPASSABLE);
+        
+        pF.SetGridNode(192,704 , NodeType.UNPASSABLE);
+        pF.SetGridNode(256,704 , NodeType.UNPASSABLE);
+        pF.SetGridNode(192 ,768 , NodeType.UNPASSABLE);
+        pF.SetGridNode(256 ,768  , NodeType.UNPASSABLE);
+        
+        pF.SetGridNode(704,704 , NodeType.UNPASSABLE);
+        pF.SetGridNode(704,768 , NodeType.UNPASSABLE);
+        pF.SetGridNode(768 ,704 , NodeType.UNPASSABLE);
+        pF.SetGridNode(768 ,768  , NodeType.UNPASSABLE);
+        
+        pF.SetGridNode(704,192 , NodeType.UNPASSABLE);
+        pF.SetGridNode(704,256 , NodeType.UNPASSABLE);
+        pF.SetGridNode(768 ,192 , NodeType.UNPASSABLE);
+        pF.SetGridNode(768 ,256  , NodeType.UNPASSABLE);
+   
     }
 }

@@ -146,8 +146,8 @@ public class Game implements ApplicationListener {
                     case MAP:
                         _shapeRenderer.begin(ShapeType.Line);
                         _shapeRenderer.setColor(Color.BLUE);
-                        for(int i = 0; i < 15; i++ ){
-                            for(int j = 0; j < 15; j++){
+                        for(int i = 0; i < 16; i++ ){
+                            for(int j = 0; j < 16; j++){
                                 _shapeRenderer.rect(i * 64, j * 64, 64, 64);
                             }
 
@@ -191,7 +191,7 @@ public class Game implements ApplicationListener {
 
                 sb.end();
           
-                _shapeRenderer.end();
+               _shapeRenderer.end();
             }
         }
        

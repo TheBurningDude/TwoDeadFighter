@@ -90,7 +90,7 @@ public class CollisionProcessingService implements IEntityProcessingService{
                             /*
                             *handling collision for map with player
                             */
-                            System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
+                            //System.out.println("dk.four.group.collision.CollisionProcessingService.process()");
                             EntityPosition first = collisionCirRect(handled, ent);
                             EntityPosition handl = handled.getEntityPosition();
                             handl.setX(first.getX());
@@ -154,6 +154,7 @@ public class CollisionProcessingService implements IEntityProcessingService{
         
         float e2CenterX = e2.getEntityPosition().getX() + (e1.getSize() /2);
         float e2CenterY = e2.getEntityPosition().getY() + (e1.getSize() /2);
+        
         float cornerX = e2.getEntityPosition().getX();
         float cornerY = e2.getEntityPosition().getY();
         
@@ -161,12 +162,12 @@ public class CollisionProcessingService implements IEntityProcessingService{
             
             if (e1CenterY < e2CenterY) 
             {
-                System.out.println(" circle y < rect y");
+                //System.out.println(" circle y < rect y");
                 return new EntityPosition(e1.getEntityPosition().getX(), e2.getEntityPosition().getY() - e1.getSize());
             }
             else 
             {
-                System.out.println(" circle y > rect y");
+                //System.out.println(" circle y > rect y");
                 return new EntityPosition(e1.getEntityPosition().getX(), e2.getEntityPosition().getY() + e2.getSize());
             }
         
@@ -175,16 +176,19 @@ public class CollisionProcessingService implements IEntityProcessingService{
         {
             if (e1CenterX < e2CenterX) 
             {
+                //System.out.println(" circle y > rect y");
                 return new EntityPosition(e2.getEntityPosition().getX() - e1.getSize(), e1.getEntityPosition().getY());
             }
             else 
             {
+                //System.out.println(" circle y > rect y");
                 return new EntityPosition(e2.getEntityPosition().getX() + e2.getSize(), e1.getEntityPosition().getY());
             }
         }
         
         if (e1CenterX > e2.getEntityPosition().getX()) 
         {
+            
             cornerX += e2.getSize(); 
             if (e1CenterY > e2.getEntityPosition().getY()) 
             {
@@ -201,16 +205,21 @@ public class CollisionProcessingService implements IEntityProcessingService{
         }
         
         EntityPosition distt = new EntityPosition(e1CenterX - cornerX, e1CenterY - cornerY);
-        
+        float nx = distt.getX();
+        float ny = distt.getX();
         double gm = (Math.pow(distt.getX(),2) + Math.pow(distt.getY(),2));
-        float nx = (float) (distt.getX() / gm);
-        float ny = (float) (distt.getY() / gm);
+        if(!(distt.getX() == 0 && distt.getY() == 0)){
+             nx  /= gm;
+             ny /= gm;
+        }
+        
         nx *= e2.getSize()/2;
         ny *= e2.getSize()/2;
+        
         distt.setX(nx);
         distt.setY(ny);
         
-        return new EntityPosition(cornerX + distt.getX() - (e2.getSize() /2) , cornerY + distt.getY() - (e2.getSize() / 2));
+        return new EntityPosition(cornerX + distt.getX() - 32 , cornerY + distt.getY() - 32);
         
     
     }

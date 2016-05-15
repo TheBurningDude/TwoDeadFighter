@@ -18,8 +18,15 @@ public class GameData {
     private int displayWidth;
     private int displayHeight;
     private final GameKeys keys = new GameKeys();
-    private List<Event> events = new CopyOnWriteArrayList<>();
+    private final List<Event> events = new CopyOnWriteArrayList<>();
+    private Entity player;
     
+    public void addPlayer(Entity p){
+        player = p;
+    }
+    public Entity getPlayer(){
+        return  player;
+    }
     public void addEvent(Event e){
         events.add(e);
     }

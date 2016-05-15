@@ -164,20 +164,20 @@ public class PathFinder {
 		Boolean ignoreDown = (Y + 1 >= grid.size());
 		
 		/*If the adjacent node isn't out of bounds, look at the node*/
-		if (!ignoreLeft && !ignoreUp)
-		{
-			LookNode(grid.get(Y).get(X), grid.get(Y-1).get(X-1));
-		}
+//		if (!ignoreLeft && !ignoreUp)
+//		{
+//			LookNode(grid.get(Y).get(X), grid.get(Y-1).get(X-1));
+//		}
 		
 		if (!ignoreUp)
 		{
 			LookNode(grid.get(Y).get(X), grid.get(Y-1).get(X));
 		}
 		
-		if (!ignoreRight && !ignoreUp)
-		{
-			LookNode(grid.get(Y).get(X), grid.get(Y-1).get(X+1));
-		}
+//		if (!ignoreRight && !ignoreUp)
+//		{
+//			LookNode(grid.get(Y).get(X), grid.get(Y-1).get(X+1));
+//		}
 		
 		if (!ignoreLeft)
 		{
@@ -189,20 +189,20 @@ public class PathFinder {
 			LookNode(grid.get(Y).get(X), grid.get(Y).get(X+1));
 		}
 		
-		if (!ignoreLeft && !ignoreDown)
-		{
-			LookNode(grid.get(Y).get(X), grid.get(Y+1).get(X-1));
-		}
+//		if (!ignoreLeft && !ignoreDown)
+//		{
+//			LookNode(grid.get(Y).get(X), grid.get(Y+1).get(X-1));
+//		}
 		
 		if (!ignoreDown)
 		{
 			LookNode(grid.get(Y).get(X), grid.get(Y+1).get(X));
 		}
 		
-		if (!ignoreRight && !ignoreDown)
-		{
-			LookNode(grid.get(Y).get(X), grid.get(Y+1).get(X+1));
-		}
+//		if (!ignoreRight && !ignoreDown)
+//		{
+//			LookNode(grid.get(Y).get(X), grid.get(Y+1).get(X+1));
+//		}
 	}
     
     public void CompareParentwithOpen(Node Parent, Node Open){
