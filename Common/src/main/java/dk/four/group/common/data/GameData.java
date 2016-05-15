@@ -20,6 +20,15 @@ public class GameData {
     private final GameKeys keys = new GameKeys();
     private final List<Event> events = new CopyOnWriteArrayList<>();
     private Entity player;
+    private float score;
+
+    public float getScore() {
+        return score;
+    }
+
+    public void setScore(float score) {
+        this.score = score;
+    }
     
     public void addPlayer(Entity p){
         player = p;
