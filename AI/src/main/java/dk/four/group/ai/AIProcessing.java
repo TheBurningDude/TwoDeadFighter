@@ -45,7 +45,7 @@ public class AIProcessing implements IEntityProcessingService{
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
         
             if(pF == null){
-                pF = new PathFinder(gameData.getDisplayWidth(),gameData.getDisplayHeight(),64,64);
+                pF = new PathFinder(gameData.getDisplayWidth() + 128,gameData.getDisplayHeight() + 128,64,64);
                 //System.out.println("dk.four.group.ai.AIProcessing.process()");
                 }   
 

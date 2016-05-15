@@ -38,7 +38,7 @@ public class WeaponProcessing implements IEntityProcessingService{
                         //e1.setRadians(i++);
                         e2.setRadians(e1.getRadians());
                         
-                canShoot = (System.currentTimeMillis() - lastPress) > 100;
+                canShoot = (System.currentTimeMillis() - lastPress) > 500;
                 
                 if(gameData.getKeys().isDown(GameKeys.SPACE)){
                     //System.out.println("dk.four.group.weapon.WeaponProcessing.process()");

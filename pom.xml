@@ -63,8 +63,6 @@
         <module>SilentUpdate</module>
         <module>Collision</module>
         <module>Map</module>
-    <module>PlayerOSGI</module>
-        <module>Launcher</module>
         <module>Weapon</module>
         <module>Enemy</module>
         <module>AI</module>

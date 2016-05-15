@@ -29,6 +29,7 @@ public final class Entity implements Serializable {
     public void setSize(float size){
         this.size = size;
     }
+    
     public float getSize(){
         return size;
     }
@@ -36,6 +37,7 @@ public final class Entity implements Serializable {
     public void setEntityPosition(float x, float y){
         this.eP = new EntityPosition(x, y);
     }
+    
     public EntityPosition getEntityPosition(){
         return eP;
     }
