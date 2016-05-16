@@ -40,16 +40,18 @@ public class AIProcessing implements IEntityProcessingService{
     
     float lastPathCal = 0;
     int i = 0;
-
+    boolean canShoot = true;
+    float lastPress = 0;
+    boolean canShootd = true;
+    float lastPressd = 0;
     @Override
     public void process(GameData gameData, Map<String, Entity> world, Entity entity) {
-        
+        canShoot = (System.currentTimeMillis() - lastPress) > 1500;
+        canShootd = (System.currentTimeMillis() - lastPressd) > 500;
             if(pF == null){
-<<<<<<< HEAD
-                pF = new PathFinder(gameData.getDisplayWidth()+128,gameData.getDisplayHeight()+128,64,64);
-=======
+
                 pF = new PathFinder(gameData.getDisplayWidth() + 128,gameData.getDisplayHeight() + 128,64,64);
->>>>>>> origin/master
+
                 //System.out.println("dk.four.group.ai.AIProcessing.process()");
                 }   
 
@@ -62,7 +64,7 @@ public class AIProcessing implements IEntityProcessingService{
                 return;
                 }
                 playerCenter = new EntityPosition(playerPos.getX() + playerBody.getWidth()/2, playerPos.getY() + playerBody.getHeight()/2);
-              long currentTime = System.currentTimeMillis();
+              //long currentTime = System.currentTimeMillis();
         for(Entity e : world.values()){
             
  
@@ -79,14 +81,17 @@ public class AIProcessing implements IEntityProcessingService{
                 
                 EntityPosition velocity = new EntityPosition(playerCenter.getX() - enemyCenter.getX(), playerCenter.getY() - enemyCenter.getY());
                 float magnitude = (float) Math.sqrt(Math.pow(velocity.getX(), 2) + Math.pow(velocity.getY(), 2));
-                
+                            pF = new PathFinder(gameData.getDisplayWidth() + 128,gameData.getDisplayHeight() + 128,64,64);
                             pF.SetGridNode((int) playerCenter.getX(), (int) playerCenter.getY(), NodeType.END);
                             pF.SetGridNode((int) enemyCenter.getX(), (int) enemyCenter.getY(), NodeType.START);
+                            MapAI();
                 //System.out.println(magnitude);
                 if(magnitude < 96){
                     if(magnitude <= 64 + (enemyBody.getWidth()/2) + (enemyBody.getHeight()/2)){
-                        if(player.getLife() > 0)
-                        player.setLife(player.getLife() - 1);
+                        if(player.getLife() > 0){
+                           player.setIsHit(true);                            
+                        }
+                        
                     }
                     tempX = velocity.getX();
                     tempY = velocity.getY();
@@ -105,19 +110,19 @@ public class AIProcessing implements IEntityProcessingService{
                             
                     
                 }else if(magnitude < 800 && pF.findPath() == 1){
-                    System.out.println((System.currentTimeMillis() - lastPathCal));
+                    //System.out.println((System.currentTimeMillis() - lastPathCal));
                     //System.out.println(lastPathCal);
                     ArrayList<Node> path = pF.GetPath();
-                    if(pF.GetPath() == null || (System.currentTimeMillis() - lastPathCal) > 1500 ){
+                    if(pF.GetPath() == null || canShoot){
                         try{
                             //i = 0;
                             MapAI();
-                            
+                            System.out.println("dk.four.group.ai.AIProcessing.process()");
                             path = pF.GetPath();
                             //System.out.println("hey");
                             i = 0;
                             velocity = new EntityPosition(path.get(i).GetCenterX() - enemyCenter.getX(), path.get(i).GetCenterY() - enemyCenter.getY());
-                            lastPathCal = System.currentTimeMillis();
+                            lastPress = System.currentTimeMillis();
                             
                             
                         }catch(Exception exception){

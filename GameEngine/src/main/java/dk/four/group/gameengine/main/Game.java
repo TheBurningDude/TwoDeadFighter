@@ -56,7 +56,7 @@ public class Game implements ApplicationListener {
     private BitmapFont font;
     private float x;
     private float y;
-    
+    private float life;
     @Override
     public void create() {
 
@@ -78,7 +78,7 @@ public class Game implements ApplicationListener {
         result.addLookupListener(lookupListener);
         
         ClassLoader loader = Lookup.getDefault().lookup(ClassLoader.class);
-        FileHandle file = new FileHandle(loader.getResource("fonts/vtks.ttf").getPath());
+        FileHandle file = new FileHandle(loader.getResource("fonts/HyperspaceBold.ttf").getPath());
         FreeTypeFontGenerator gen = new FreeTypeFontGenerator(file);
         font = gen.generateFont(40);
 
@@ -121,46 +121,20 @@ public class Game implements ApplicationListener {
         for (Entity entity : world.values()) {
 
             Asset a = entity.getAsset();
-<<<<<<< HEAD
+
             if(a == null) continue;
-            
-            if(_assetManager.isLoaded(a.getPath())){
-                
-=======
 
             if (_assetManager.isLoaded(a.getPath())) {
 
->>>>>>> origin/master
+
                 sb.begin();
 
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
                 Sprite s = new Sprite(t);
-<<<<<<< HEAD
+
                 
                 
                 if(null != entity.getType())switch (entity.getType()) {
-                    
-                    case PLAYER:
-                        _shapeRenderer.begin(ShapeType.Line);
-                        _shapeRenderer.setColor(Color.RED);
-                        _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth()/2  , entity.getEntityPosition().getY() + entity.getEntityBody().getHeight()/2, entity.getRadius());
-                        _shapeRenderer.rect(entity.getEntityPosition().getX(), entity.getEntityPosition().getY(), entity.getEntityBody().getWidth(), entity.getEntityBody().getHeight());
-                        x = entity.getEntityPosition().getX();
-                        y = entity.getEntityPosition().getY();
-                        s.setSize(s.getWidth(),s.getHeight());
-                        //s.setRotation(entity.getRadians());
-                        s.setOrigin(32, 32);
-                        s.setRotation(entity.getRadians());
-                        
-                        s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
-                        
-                        
-                        //System.out.println(entity.getRadians());
-                        break;
-=======
-
-                if (null != entity.getType()) {
-                    switch (entity.getType()) {
 
                         case PLAYER:
                             _shapeRenderer.begin(ShapeType.Line);
@@ -173,11 +147,10 @@ public class Game implements ApplicationListener {
                             //s.setRotation(entity.getRadians());
                             s.setOrigin(32, 32);
                             s.setRotation(entity.getRadians());
-
                             s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
                             //System.out.println(entity.getRadians());
                             break;
->>>>>>> origin/master
+
                         case WEAPON:
                             s.setRotation(entity.getRadians());
                             s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
@@ -193,8 +166,7 @@ public class Game implements ApplicationListener {
 
                             }*/
                             //score
-                            sb.setColor(0, 0, 1, 1);
-                            font.draw(sb, Long.toString((long) gameData.getScore()), 50, 900);
+                            
                            
                             s.setSize(entity.getSize(), entity.getSize());
                             s.setRotation(entity.getRadians());
@@ -211,7 +183,7 @@ public class Game implements ApplicationListener {
 
                             break;
                         case ENEMY:
-<<<<<<< HEAD
+
                         _shapeRenderer.begin(ShapeType.Line);
                         _shapeRenderer.setColor(Color.RED);
                         _shapeRenderer.circle(entity.getEntityPosition().getX() + 32, entity.getEntityPosition().getY()+ 32, entity.getRadius());
@@ -226,54 +198,35 @@ public class Game implements ApplicationListener {
                         s.setPosition(entity.getEntityPosition().getX(),entity.getEntityPosition().getY());      
                     
                         break;
+                        
                     default:
-                        
-                        break;
-                        
-=======
-                            _shapeRenderer.begin(ShapeType.Line);
-                            _shapeRenderer.setColor(Color.RED);
-                            _shapeRenderer.circle(entity.getEntityPosition().getX() + 32, entity.getEntityPosition().getY() + 32, entity.getRadius());
-                            float angle = (float) Math.atan2(y - entity.getEntityPosition().getY(), x - entity.getEntityPosition().getX());
-                            angle = (float) (angle * (180 / Math.PI));
-                            if (angle < 0) {
-                                angle = 360 - (-angle);
-                            }
-                            s.setSize(entity.getSize(), entity.getSize());
-                            s.setRotation(angle);
-                            //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
-                            //System.out.println(newY);
-
-                            s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
-
-                            break;
-                        default:
+                            
                             break;
 
                     }
->>>>>>> origin/master
-                }
-                        
 
+                
+                        
+        
                 s.draw(sb);
 
-<<<<<<< HEAD
+
                         sb.end();
-                        
-                        if(entity.getType().equals(EntityType.PLAYER)){
-                            _shapeRenderer.end();
-                        _shapeRenderer.begin(ShapeType.Filled);
-                        _shapeRenderer.setColor(Color.GREEN);
-                        _shapeRenderer.rect(50,gameData.getDisplayHeight()-50, entity.getLife(), 20);
-                        }
                         
           
                _shapeRenderer.end();
-=======
-                sb.end();
 
-                _shapeRenderer.end();
->>>>>>> origin/master
+
+            }
+            
+            if(entity.getType().equals(EntityType.HEALTH)){
+                sb.begin();
+                sb.setColor(0, 0, 1, 1);
+                font.draw(sb, Long.toString((long) gameData.getScore()), 50, 900);
+                                _shapeRenderer.begin(ShapeType.Filled);
+                                _shapeRenderer.setColor(Color.GREEN);
+                                _shapeRenderer.rect(50,gameData.getDisplayHeight()-50, gameData.getPlayer().getLife(), 20);
+                                _shapeRenderer.end();
             }
         }
 

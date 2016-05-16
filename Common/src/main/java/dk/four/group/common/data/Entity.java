@@ -16,7 +16,7 @@ public final class Entity implements Serializable {
     private float[] shapeX = new float[4];
     private float[] shapeY = new float[4];
     private int rotationSpeed;
-    private int life;
+    private float life;
     private float radius;
     private boolean isHit = false;
     private float expiration;
@@ -78,11 +78,11 @@ public final class Entity implements Serializable {
         return radius;
     }
 
-    public int getLife() {
+    public float getLife() {
         return life;
     }
 
-    public void setLife(int life) {
+    public void setLife(float life) {
         this.life = life;
     }
 

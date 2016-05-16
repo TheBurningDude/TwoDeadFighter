@@ -36,7 +36,9 @@ public class EnemyEntity implements IGamePluginService {
         enemy = createEnemy(gameData);
         entity2 = createEnemy(gameData);
         entity2.setEntityPosition(200, 200);
+    
         world.put(entity2.getID(), entity2);
+        
         world.put(enemy.getID(), enemy);
     }
     
@@ -67,8 +69,12 @@ public class EnemyEntity implements IGamePluginService {
 
     @Override
     public void stop(GameData gamedata) {
-        // Remove entities
-        world.remove(enemy.getID());
+        for(Entity e : world.values()){
+            if(e.getType().equals(ENEMY)){
+                world.remove(e.getID());
+            }
+        }
+        
         
     }
     

@@ -12,5 +12,5 @@ import java.io.Serializable;
  * @author nasib
  */
 public enum EntityType implements Serializable {
-    PLAYER, ENEMY, WEAPON, MAP, BULLET, SCORE;
+    PLAYER, ENEMY, WEAPON, MAP, BULLET, SCORE, HEALTH;
 }

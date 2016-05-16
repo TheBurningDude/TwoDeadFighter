@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.GameEngine">
-<<<<<<< HEAD
-    <module_version install_time="1463322046402" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1463425554445" last="true" origin="installer" specification_version="1.0">
         <file crc="433646851" name="config/Modules/dk-four-group-GameEngine.xml"/>
-        <file crc="130448125" name="modules/dk-four-group-GameEngine.jar"/>
-=======
-    <module_version install_time="1463335935440" last="true" origin="installer" specification_version="1.0">
-        <file crc="433646851" name="config/Modules/dk-four-group-GameEngine.xml"/>
-        <file crc="136306259" name="modules/dk-four-group-GameEngine.jar"/>
->>>>>>> origin/master
+        <file crc="3876276261" name="modules/dk-four-group-GameEngine.jar"/>
         <file crc="2488665527" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-backend-lwjgl.jar"/>
         <file crc="2933476186" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-box2d-platform-natives-desktop.jar"/>
         <file crc="3989081260" name="modules/ext/dk.four.group.GameEngine/com-badlogicgames-gdx/gdx-box2d.jar"/>

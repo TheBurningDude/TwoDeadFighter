@@ -54,6 +54,11 @@ public class WeaponEntity implements IGamePluginService{
     @Override
     public void stop(GameData gamedata) {
         // Remove entities
+        for(Entity e : world.values()){
+            if(e.getType().equals(EntityType.BULLET)){
+                world.remove(e.getID());
+            }
+        }
         world.remove(weapon.getID());
     }
 
