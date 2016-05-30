@@ -9,6 +9,11 @@ import dk.four.group.common.data.Entity;
 import dk.four.group.common.data.GameData;
 import dk.four.group.common.data.NodeType;
 import dk.four.group.common.services.IGamePluginService;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+import java.util.HashMap;
+>>>>>>> origin/master
 import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +21,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+<<<<<<< HEAD
 /**
  *
  * @author nasib
+=======
+import org.netbeans.junit.MockServices;
+/**
+ *
+ * @author Sidon K. K
+>>>>>>> origin/master
  */
 public class PathFinderTest {
     
@@ -85,4 +97,8 @@ public class PathFinderTest {
         
     }
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master
 }

@@ -5,6 +5,10 @@
  */
 package dk.four.group.ai;
 
+<<<<<<< HEAD
+=======
+import dk.four.group.common.data.NodeType;
+>>>>>>> origin/master
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,7 +18,11 @@ import static org.junit.Assert.*;
 
 /**
  *
+<<<<<<< HEAD
  * @author nasib
+=======
+ * @author Sidon K. K
+>>>>>>> origin/master
  */
 public class NodeTest {
     

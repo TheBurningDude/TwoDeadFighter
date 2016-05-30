@@ -16,5 +16,9 @@
 /AI/target/
 /Score/target/
 /HUD/target/
+<<<<<<< HEAD
 /AI/nbproject/
 /Collision/nbproject/
+=======
+/AI/nbproject/
+>>>>>>> origin/master
