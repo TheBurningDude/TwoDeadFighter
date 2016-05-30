@@ -56,7 +56,7 @@ public class Game implements ApplicationListener {
     private BitmapFont font;
     private float x;
     private float y;
-    private float life;
+
     @Override
     public void create() {
 
@@ -76,7 +76,7 @@ public class Game implements ApplicationListener {
 
         result = lookup.lookupResult(IGamePluginService.class);
         result.addLookupListener(lookupListener);
-        
+
         ClassLoader loader = Lookup.getDefault().lookup(ClassLoader.class);
         FileHandle file = new FileHandle(loader.getResource("fonts/HyperspaceBold.ttf").getPath());
         FreeTypeFontGenerator gen = new FreeTypeFontGenerator(file);
@@ -122,21 +122,22 @@ public class Game implements ApplicationListener {
 
             Asset a = entity.getAsset();
 
-            if(a == null) continue;
+            if (a == null) {
+                continue;
+            }
 
             if (_assetManager.isLoaded(a.getPath())) {
-
 
                 sb.begin();
 
                 Texture t = _assetManager.get(a.getPath(), Texture.class);
                 Sprite s = new Sprite(t);
 
-                
-                
-                if(null != entity.getType())switch (entity.getType()) {
+                if (null != entity.getType()) {
+                    switch (entity.getType()) {
 
                         case PLAYER:
+                            
                             _shapeRenderer.begin(ShapeType.Line);
                             _shapeRenderer.setColor(Color.RED);
                             _shapeRenderer.circle(entity.getEntityPosition().getX() + entity.getEntityBody().getWidth() / 2, entity.getEntityPosition().getY() + entity.getEntityBody().getHeight() / 2, entity.getRadius());
@@ -159,6 +160,8 @@ public class Game implements ApplicationListener {
                         case MAP:
                             _shapeRenderer.begin(ShapeType.Line);
                             _shapeRenderer.setColor(Color.BLUE);
+
+                            font.draw(sb, Long.toString((long) gameData.getScore()), 50, 900);
                             /*for (int i = 0; i < 16; i++) {
                                 for (int j = 0; j < 16; j++) {
                                     _shapeRenderer.rect(i * 64, j * 64, 64, 64);
@@ -166,8 +169,7 @@ public class Game implements ApplicationListener {
 
                             }*/
                             //score
-                            
-                           
+
                             s.setSize(entity.getSize(), entity.getSize());
                             s.setRotation(entity.getRadians());
                             s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
@@ -184,49 +186,44 @@ public class Game implements ApplicationListener {
                             break;
                         case ENEMY:
 
-                        _shapeRenderer.begin(ShapeType.Line);
-                        _shapeRenderer.setColor(Color.RED);
-                        _shapeRenderer.circle(entity.getEntityPosition().getX() + 32, entity.getEntityPosition().getY()+ 32, entity.getRadius());
-                        float angle = (float) Math.atan2(y - entity.getEntityPosition().getY(), x - entity.getEntityPosition().getX());
-                        angle = (float) (angle * (180 / Math.PI));
-                        if(angle < 0)angle= 360 -(-angle);
-                        s.setSize(entity.getSize(),entity.getSize());
-                        s.setRotation(angle);
-                        //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
-                        //System.out.println(newY);
-                        
-                        s.setPosition(entity.getEntityPosition().getX(),entity.getEntityPosition().getY());      
-                    
-                        break;
-                        
-                    default:
-                            
+                            _shapeRenderer.begin(ShapeType.Line);
+                            _shapeRenderer.setColor(Color.RED);
+                            _shapeRenderer.circle(entity.getEntityPosition().getX() + 32, entity.getEntityPosition().getY() + 32, entity.getRadius());
+                            float angle = (float) Math.atan2(y - entity.getEntityPosition().getY(), x - entity.getEntityPosition().getX());
+                            angle = (float) (angle * (180 / Math.PI));
+                            if (angle < 0) {
+                                angle = 360 - (-angle);
+                            }
+                            s.setSize(entity.getSize(), entity.getSize());
+                            s.setRotation(angle);
+                            //float newY = entity.getEntityPosition().getY() + (1000 * gameData.getDelta());
+                            //System.out.println(newY);
+
+                            s.setPosition(entity.getEntityPosition().getX(), entity.getEntityPosition().getY());
+
+                            break;
+
+                        default:
+
                             break;
 
                     }
+                }
 
-                
-                        
-        
                 s.draw(sb);
 
+                sb.end();
 
-                        sb.end();
-                        
-          
-               _shapeRenderer.end();
-
+                _shapeRenderer.end();
 
             }
-            
-            if(entity.getType().equals(EntityType.HEALTH)){
-                sb.begin();
-                sb.setColor(0, 0, 1, 1);
-                font.draw(sb, Long.toString((long) gameData.getScore()), 50, 900);
-                                _shapeRenderer.begin(ShapeType.Filled);
-                                _shapeRenderer.setColor(Color.GREEN);
-                                _shapeRenderer.rect(50,gameData.getDisplayHeight()-50, gameData.getPlayer().getLife(), 20);
-                                _shapeRenderer.end();
+
+            if (entity.getType().equals(EntityType.PLAYER)) {
+                
+                _shapeRenderer.begin(ShapeType.Filled);
+                _shapeRenderer.setColor(Color.GREEN);
+                _shapeRenderer.rect(50, gameData.getDisplayHeight() - 50, gameData.getPlayer().getLife(), 20);
+                _shapeRenderer.end();
             }
         }
 

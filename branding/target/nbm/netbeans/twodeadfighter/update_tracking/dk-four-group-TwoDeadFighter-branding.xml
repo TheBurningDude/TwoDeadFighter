@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="dk.four.group.TwoDeadFighter.branding">
-    <module_version install_time="1463425511394" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1464640868554" last="true" origin="installer" specification_version="1.0">
         <file crc="43030276" name="config/Modules/dk-four-group-TwoDeadFighter-branding.xml"/>
-        <file crc="2683417309" name="core/locale/core_twodeadfighter.jar"/>
-        <file crc="1713003604" name="modules/dk-four-group-TwoDeadFighter-branding.jar"/>
-        <file crc="1667190863" name="modules/locale/org-netbeans-core-windows_twodeadfighter.jar"/>
-        <file crc="513827907" name="modules/locale/org-netbeans-core_twodeadfighter.jar"/>
+        <file crc="1332853903" name="core/locale/core_twodeadfighter.jar"/>
+        <file crc="3959810879" name="modules/dk-four-group-TwoDeadFighter-branding.jar"/>
+        <file crc="1159715828" name="modules/locale/org-netbeans-core-windows_twodeadfighter.jar"/>
+        <file crc="509457423" name="modules/locale/org-netbeans-core_twodeadfighter.jar"/>
     </module_version>
 </module>

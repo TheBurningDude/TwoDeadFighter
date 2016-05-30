@@ -43,6 +43,7 @@ public class MapEntityPlugin implements IGamePluginService {
     private List <Entity> createMap() {
         List <Entity> e = new ArrayList<>();
         Entity mapEntity1 = new Entity();
+        //Tilføj nu entity og give type, sådan så map loades ind og der bliver lavet et map
         mapEntity1.setAsset(ResourceManager.getAsset(GRASS_PATH));
         mapEntity1.setType(EntityType.MAP);
         mapEntity1.setEntityPosition(192 , 192 );
@@ -74,7 +75,7 @@ public class MapEntityPlugin implements IGamePluginService {
         mapEntity3.setSize(128);
         //mapEntity3.setRect(new Rectangle(mapEntity3.getX(), mapEntity3.getY(), mapEntity3.getSize(), mapEntity3.getSize()));
         //mapEntity3.setRadius(128);
-       mapEntity3.setEntityBody(new EntityBody(128, 128, EntityBody.CollisionShape.RECTANGLE));
+        mapEntity3.setEntityBody(new EntityBody(128, 128, EntityBody.CollisionShape.RECTANGLE));
        
         mapEntity3.setAsset(ResourceManager.getAsset(GRASS_PATH));
         
@@ -93,7 +94,7 @@ public class MapEntityPlugin implements IGamePluginService {
         e.add(mapEntity1);
         e.add(mapEntity2);
         e.add(mapEntity3);
-        e.add(mapEntity4);
+        e.add(mapEntity4);    
         
         return e;
     }
